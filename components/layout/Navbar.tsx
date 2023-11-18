@@ -18,35 +18,37 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className='fixed top-0 left-0 w-full text-lg text-gray-100 bg-gray-800 '>
-			<div className='py-1 px-4 '>
+		<nav className='fixed top-0 left-0 w-full text-lg  text-gray-100 bg-gray-800 lg:text-xl'>
+			<div className='py-0 px-4 md:flex md:items-center md:justify-between md:px-14 lg:px-36  -z-10'>
 				<Link href={'/'} className='flex items-center'>
 					<Image
-						height={52}
-						width={52}
+						height={80}
+						width={80}
 						src='/static/img/logo.png'
 						alt='Gymbro logo'
+						className='w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20'
 					/>{' '}
-					<p className=' font-bold'>
+					<p className=' font-bold lg:text-2xl'>
 						Gym<span className='text-orange-400'>Bro</span>
 					</p>
 				</Link>
 
-				<div className='absolute p-2 top-1 right-4' onClick={navMenuHandler}>
+				<div
+					className='absolute p-2 top-0.5 right-4 md:hidden z-30'
+					onClick={navMenuHandler}>
 					<IconMenu2 className={!isOpen ? 'nav-icon' : 'hidden'} />
 					<IconX className={isOpen ? 'nav-icon' : 'hidden'} />
 				</div>
 
 				<ul
-					className={`absolute bg-gray-800 w-full left-0 -top-full text-center py-3  -z-10  transition-all duration-500  ${
-						isOpen ? 'opacity-1  top-12' : 'opacity-0 '
-					}`}>
+					className={`absolute bg-gray-800 w-full left-0 -top-full text-center py-2    transition-all duration-500   ${
+						isOpen ? 'opacity-1  top-12' : 'opacity-0'
+					} md:flex md:items-center  md:w-auto md:opacity-100  md:static`}>
 					{navLinks.map((link) => (
-						<li>
+						<li key={link.name}>
 							<Link
-								key={link.name}
 								href={link.link}
-								className='block py-3 mt-1 cursor-pointer'>
+								className='block py-2 my-2 cursor-pointer md:mx-4 z-100'>
 								{link.name}
 							</Link>
 						</li>
