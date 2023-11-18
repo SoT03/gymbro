@@ -18,7 +18,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className='fixed top-0 left-0 w-full text-lg text-gray-100 bg-gray-800'>
+		<nav className='fixed top-0 left-0 w-full text-lg text-gray-100 bg-gray-800 '>
 			<div className='py-1 px-4 '>
 				<Link href={'/'} className='flex items-center'>
 					<Image
@@ -37,7 +37,10 @@ const Navbar = () => {
 					<IconX className={isOpen ? 'nav-icon' : 'hidden'} />
 				</div>
 
-				<ul className={isOpen ? 'text-center py-3' : 'hidden'}>
+				<ul
+					className={`absolute bg-gray-800 w-full left-0 -top-full text-center py-3  -z-10  transition-all duration-500  ${
+						isOpen ? 'opacity-1  top-12' : 'opacity-0 '
+					}`}>
 					{navLinks.map((link) => (
 						<li>
 							<Link
