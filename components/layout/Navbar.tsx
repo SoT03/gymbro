@@ -18,8 +18,8 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className='fixed top-0 left-0 w-full text-lg  text-gray-100 bg-gray-800 lg:text-xl'>
-			<div className='py-0 px-4 md:flex md:items-center md:justify-between md:px-14 lg:px-36  -z-10'>
+		<nav className='fixed top-0 left-0 w-full text-lg  text-gray-100 bg-gray-800 lg:text-xl z-10'>
+			<div className='py-0 px-4 md:flex md:items-center md:justify-between md:px-14 lg:px-36  '>
 				<Link href={'/'} className='flex items-center'>
 					<Image
 						height={80}
@@ -48,7 +48,7 @@ const Navbar = () => {
 						<li key={link.name}>
 							<Link
 								href={link.link}
-								className='block py-2 my-2 cursor-pointer md:mx-4 z-100'>
+								className='block py-2 my-2 cursor-pointer md:mx-4 z-100 hover:text-orange-400 transition-colors duration-300'>
 								{link.name}
 							</Link>
 						</li>
