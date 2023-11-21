@@ -19,7 +19,7 @@ const SliderItem = ({ itemData }: SliderItem) => {
 
 	return (
 		<div
-			className='flex flex-col items-center justify-center h-full  bg-left bg-gray-800  bg-no-repeat text-center  text-white sm:bg-center'
+			className='flex flex-col items-center justify-center h-full  bg-left bg-gray-800  bg-no-repeat text-center  text-white sm:bg-center px-10'
 			style={{
 				backgroundImage:
 					width < 768 ? `url(${itemData.url_mobile})` : `url(${itemData.url})`,

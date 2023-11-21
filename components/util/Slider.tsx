@@ -21,12 +21,14 @@ const Slider = ({ imageUrls }: ImageSliderProps) => {
 	return (
 		<div className='relative h-full z-0 '>
 			<SliderItem itemData={imageUrls[imgIndex]} />
-			<button className='absolute left-0 top-1/2'>
-				<IconChevronLeft />
-			</button>
-			<button>
-				<IconChevronRight className='absolute right-0 top-1/2' />
-			</button>
+			<div className='absolute bottom-6 text-white z-10 left-1/2 -translate-x-1/2'>
+				<button className='mr-10'>
+					<IconChevronLeft />
+				</button>
+				<button>
+					<IconChevronRight className='' />
+				</button>
+			</div>
 		</div>
 	);
 };
