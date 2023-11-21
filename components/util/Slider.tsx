@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Image from 'next/image';
 import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
 import SliderItem from './SliderItem';
 
@@ -8,15 +7,16 @@ export type ImageSliderProps = {
 		title: string;
 		desc: string;
 		url: string;
+		url_mobile: string;
 	}[];
 };
 
 const Slider = ({ imageUrls }: ImageSliderProps) => {
-	const [imgIndex, setImgIndex] = useState(2);
+	const [imgIndex, setImgIndex] = useState(0);
 
 	return (
 		<div className='relative h-full z-0 bg-pink-100'>
-			<SliderItem itemData={imageUrls[0]} />
+			<SliderItem itemData={imageUrls[imgIndex]} />
 			<button className='absolute left-0 top-1/2'>
 				<IconChevronLeft />
 			</button>
