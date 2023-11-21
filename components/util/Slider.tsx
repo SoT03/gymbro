@@ -16,17 +16,17 @@ export type ImageSliderProps = {
 };
 
 const Slider = ({ imageUrls }: ImageSliderProps) => {
-	const [imgIndex, setImgIndex] = useState(0);
+	const [imgIndex, setImgIndex] = useState(2);
 
 	return (
 		<div className='relative h-full z-0 '>
 			<SliderItem itemData={imageUrls[imgIndex]} />
-			<div className='absolute bottom-6 text-white z-10 left-1/2 -translate-x-1/2'>
-				<button className='mr-10'>
-					<IconChevronLeft />
+			<div className='absolute bottom-4 text-white z-10 left-1/2 -translate-x-1/2 md:bottom-8'>
+				<button className='mr-10 '>
+					<IconChevronLeft className='h-8 w-8 md:w-12 md:h-12' />
 				</button>
 				<button>
-					<IconChevronRight className='' />
+					<IconChevronRight className='h-8 w-8 md:w-12 md:h-12' />
 				</button>
 			</div>
 		</div>

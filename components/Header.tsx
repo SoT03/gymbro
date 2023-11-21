@@ -23,12 +23,12 @@ const Header = () => {
 			},
 		},
 		{
-			title: 'h3',
-			desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.69696',
+			title: 'Train with the best',
+			desc: 'Our personal trainers are well known around the country. They transformed thousands of bodies throughout their careers.',
 			url: '/static/img/header/workhard_big.jpg',
 			url_mobile: '/static/img/header/workhard_small.jpg',
 			btn: {
-				text: 'Join us',
+				text: 'Check out',
 				url: '/',
 			},
 		},

@@ -15,9 +15,25 @@
 		width: 100%;
 		top: 0;
 		left: 0;
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgba(0, 0, 0, 0.6);
 		z-index: 2;
 	}
+
+	.btn {
+		display: inline-block;
+		padding: 0.7rem 1.5rem;
+		font-weight: bold;
+		border-radius: 0.25rem;
+		z-index: 10;
+		text-transform: uppercase;
+	}
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	z-index: 10;
 }
 
 * {
