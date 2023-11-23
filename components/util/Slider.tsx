@@ -1,5 +1,9 @@
 import { useState } from 'react';
-import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
+import {
+	IconChevronRight,
+	IconChevronLeft,
+	IconPointFilled,
+} from '@tabler/icons-react';
 import SliderItem from './SliderItem';
 
 export type ImageSliderProps = {
@@ -22,7 +26,6 @@ const Slider = ({ imageUrls }: ImageSliderProps) => {
 		const isFirstSlide = imgIndex === 0;
 		const newIndex = isFirstSlide ? imageUrls.length - 1 : imgIndex - 1;
 		setImgIndex(newIndex);
-		console.log(newIndex);
 	};
 
 	const nextSlide = () => {
@@ -55,6 +58,18 @@ const Slider = ({ imageUrls }: ImageSliderProps) => {
 						onClick={nextSlide}
 					/>
 				</button>
+			</div>
+			<div className='absolute flex flex-row left-1/2 -translate-x-1/2  bottom-16'>
+				{imageUrls.map((slide, slideIndex) => (
+					<div key={slideIndex}>
+						<IconPointFilled
+							onClick={() => setImgIndex(slideIndex)}
+							className={`h-10 w-10   cursor-pointer  rounded-full ${
+								slideIndex === imgIndex ? 'text-orange-400' : 'text-white'
+							}`}
+						/>
+					</div>
+				))}
 			</div>
 		</div>
 	);
