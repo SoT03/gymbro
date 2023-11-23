@@ -12,17 +12,19 @@ type SliderItem = {
 			url: string;
 		};
 	};
+	currentIndex: number;
 };
 
-const SliderItem = ({ itemData }: SliderItem) => {
+const SliderItem = ({ itemData, currentIndex }: SliderItem) => {
 	const width = useWindowWidth();
 
 	return (
 		<div
-			className='flex flex-col items-center justify-center h-full bg-gray-800  bg-no-repeat text-center  text-white bg-center px-10 md:bg-cover md:px-20'
+			className='flex flex-col items-center justify-center w-full flex-shrink-0  h-full bg-gray-800  bg-no-repeat text-center  text-white bg-center px-10 md:bg-cover md:px-20'
 			style={{
 				backgroundImage:
 					width < 768 ? `url(${itemData.url_mobile})` : `url(${itemData.url})`,
+				translate: `${-100 * currentIndex}%`,
 			}}>
 			<div className='wrapper'>
 				<h2 className='z-10 text-2xl mb-2 font-bold uppercase md:text-4xl lg:text-7xl'>

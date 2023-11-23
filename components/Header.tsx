@@ -35,7 +35,7 @@ const Header = () => {
 	];
 
 	return (
-		<header className='h-96 max-h md:h-screen '>
+		<header className='h-96 md:h-screen overflow-hidden'>
 			<Slider imageUrls={images} />
 		</header>
 	);

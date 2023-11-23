@@ -18,7 +18,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className='fixed top-0 left-0 w-full text-lg  text-gray-100 bg-gray-800 lg:text-xl z-10'>
+		<nav className='fixed top-0 left-0 w-full text-lg  text-gray-100 bg-gray-800  md:bg-transparent lg:text-xl z-10'>
 			<div className='py-0 px-4 md:flex md:items-center md:justify-between md:px-14 lg:px-36  '>
 				<Link href={'/'} className='flex items-center'>
 					<Image
@@ -43,7 +43,7 @@ const Navbar = () => {
 				<ul
 					className={`absolute bg-gray-800 w-full left-0 -top-full text-center py-2    transition-all duration-500   ${
 						isOpen ? 'opacity-1  top-12' : 'opacity-0'
-					} md:flex md:items-center  md:w-auto md:opacity-100  md:static`}>
+					} md:flex md:items-center  md:w-auto md:opacity-100  md:static md:bg-transparent`}>
 					{navLinks.map((link) => (
 						<li key={link.name}>
 							<Link
