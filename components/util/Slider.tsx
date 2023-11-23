@@ -42,10 +42,10 @@ const Slider = ({ imageUrls }: ImageSliderProps) => {
 					/>
 				))}
 			</div>
-			<div className='absolute bottom-4 text-white z-10 left-1/2 -translate-x-1/2 md:bottom-8'>
-				<button className='mr-10 '>
+			<div className='absolute flex gap-2 bottom-4 text-white z-10 left-1/2 -translate-x-1/2 md:bottom-8 xl:bottom-1/2 xl:w-full xl:justify-between xl:px-8'>
+				<button>
 					<IconChevronLeft
-						className='h-8 w-8 md:w-12 md:h-12'
+						className='h-8 w-8 md:w-12 md:h-12 '
 						onClick={prevSlide}
 					/>
 				</button>
