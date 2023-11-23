@@ -16,7 +16,7 @@ export type ImageSliderProps = {
 };
 
 const Slider = ({ imageUrls }: ImageSliderProps) => {
-	const [imgIndex, setImgIndex] = useState(2);
+	const [imgIndex, setImgIndex] = useState(0);
 
 	return (
 		<div className='relative h-full z-0 '>

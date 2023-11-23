@@ -33,7 +33,7 @@ const SliderItem = ({ itemData }: SliderItem) => {
 				</p>
 				<Link
 					href={itemData.btn.url}
-					className='btn bg-gradient-to-r from-red-500 to-orange-400 hover:bg-white hover:text-orange-400 transition-colors duration-300 mt-2  md:text-lg  md:w-1/4 lg:text-3xl lg:py-4'>
+					className='btn bg-gradient-to-r from-red-500 to-orange-400 hover:from-white hover:text-orange-400   hover:to-white transition-colors duration-300 mt-2  md:text-lg  md:w-1/4 lg:text-3xl lg:py-4'>
 					{itemData.btn.text}
 				</Link>
 			</div>
