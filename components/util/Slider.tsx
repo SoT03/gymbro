@@ -59,12 +59,12 @@ const Slider = ({ imageUrls }: ImageSliderProps) => {
 					/>
 				</button>
 			</div>
-			<div className='absolute flex flex-row left-1/2 -translate-x-1/2  bottom-16'>
+			<div className='hidden xl:flex absolute  flex-row left-1/2 -translate-x-1/2  bottom-16'>
 				{imageUrls.map((slide, slideIndex) => (
 					<div key={slideIndex}>
 						<IconPointFilled
 							onClick={() => setImgIndex(slideIndex)}
-							className={`h-10 w-10   cursor-pointer  rounded-full ${
+							className={`h-10 w-10   cursor-pointer  rounded-full  ${
 								slideIndex === imgIndex ? 'text-orange-400' : 'text-white'
 							}`}
 						/>

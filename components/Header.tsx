@@ -14,7 +14,7 @@ const Header = () => {
 		},
 		{
 			title: 'Join our fitness community',
-			desc: 'Become a member of our gym and fitness community. Meet great people and have fun while improving yourself !',
+			desc: 'Become a member of our gym and fitness community. Meet, chat and talk woith great people and have fun while improving yourself !',
 			url: '/static/img/header/togheter_big.jpg',
 			url_mobile: '/static/img/header/togheter_small.jpg',
 			btn: {
