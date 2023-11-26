@@ -40,20 +40,23 @@ const Welcome = () => {
 							yourself.
 						</p>
 					</div>
-					<div className=''>
+					<div>
 						<iframe
-							className='w-full  
+							className='w-full 
                             '
 							src={videos[currentVideo]}
 							title='YouTube video player'
 							allowFullScreen></iframe>
-						<div className='flex justify-around'>
-							{thumbnails.map((photo) => (
+						<div className='flex justify-around '>
+							{thumbnails.map((photo, index) => (
 								<img
 									src={photo}
 									alt='some alt'
 									key={photo}
-									className='w-1/3 border-2 cursor-pointer hover:scale-110 transition-transform duration-300'
+									className={`w-1/3 border-2 cursor-pointer hover:scale-110 transition-transform duration-300  ${
+										index === currentVideo ? 'border-orange-400' : ''
+									}`}
+									onClick={() => setCurrentVideo(index)}
 								/>
 							))}
 						</div>
