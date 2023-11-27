@@ -2,7 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { IconMenu2, IconX } from '@tabler/icons-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useWindowSize } from '@/hooks/useWindowWidth';
 const navLinks: { name: string; link: string }[] = [
 	{ name: 'Home', link: '/' },
 	{ name: 'Offer', link: '/' },
@@ -12,13 +13,26 @@ const navLinks: { name: string; link: string }[] = [
 ];
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [scrollY, setScrollY] = useState(0);
+
+	useEffect(() => {
+		function handleScroll() {
+			setScrollY(window.scrollY);
+		}
+
+		window.addEventListener('scroll', handleScroll);
+	}, []);
 
 	const navMenuHandler = () => {
 		setIsOpen(!isOpen);
 	};
 
 	return (
-		<nav className='fixed top-0 left-0 w-full text-lg  text-gray-100 bg-gray-800  md:bg-transparent lg:text-xl z-10'>
+		<nav
+			className={`fixed top-0 left-0 w-full text-lg  text-gray-100 bg-gray-800 md:bg-transparent   lg:text-xl z-10 ${
+				scrollY > 120 ? 'md:backdrop-blur-sm' : ''
+			}
+			`}>
 			<div className='py-0 px-4 md:flex md:items-center md:justify-between md:px-14 lg:px-36  '>
 				<Link href={'/'} className='flex items-center'>
 					<Image
