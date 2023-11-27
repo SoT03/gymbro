@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useWindowSize } from '../../hooks/useWindowWidth';
 
 type SliderItem = {
 	itemData: {
@@ -16,14 +16,16 @@ type SliderItem = {
 };
 
 const SliderItem = ({ itemData, currentIndex }: SliderItem) => {
-	const width = useWindowWidth();
+	const size = useWindowSize();
 
 	return (
 		<div
 			className='flex flex-col items-center justify-center w-full flex-shrink-0  h-full bg-gray-800  bg-no-repeat text-center  text-white bg-center px-10 md:bg-cover md:px-20 transition-transform duration-700'
 			style={{
 				backgroundImage:
-					width < 768 ? `url(${itemData.url_mobile})` : `url(${itemData.url})`,
+					size.width < 768
+						? `url(${itemData.url_mobile})`
+						: `url(${itemData.url})`,
 				transform: `translate(${-100 * currentIndex}%)`,
 			}}>
 			<div className='wrapper'>
@@ -43,22 +45,6 @@ const SliderItem = ({ itemData, currentIndex }: SliderItem) => {
 		</div>
 	);
 };
-
-function useWindowWidth() {
-	const [windowWidth, setWindowWidth] = useState(0);
-
-	useEffect(() => {
-		function handleResize() {
-			setWindowWidth(window.innerWidth);
-		}
-		window.addEventListener('resize', handleResize);
-
-		handleResize();
-
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
-	return windowWidth;
-}
 
 export default SliderItem;
 
