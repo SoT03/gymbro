@@ -1,4 +1,36 @@
 import Image from 'next/image';
+import OpinionCard from './OpinionCard';
+
+const reviewsData = [
+	{
+		name: 'John Doe',
+		avatar: '/static/img/opinions/man1.jpg',
+		review:
+			'This gym is amazing. Amazing facility, top equipment and great environment. Good service with friendly staff and super clean and comfortable gym for everyone from beginners to professional athletes to train at. I will definitely be returning on my next trip.',
+		rate: 4.5,
+	},
+	{
+		name: 'Bruce Wayne',
+		avatar: '/static/img/opinions/man2.jpg',
+		review:
+			'My partner and I visited the gym after a recommendation from a friend. Great experience, gym has everything you need. It is also very very clean. They offer protein shakes and supplements too which is nice. 350 baht each was reasonable',
+		rate: 4.5,
+	},
+	{
+		name: 'Harvey Dent',
+		avatar: '/static/img/opinions/man3.jpg',
+		review:
+			'Had a great gym session in here, has all the facilities/machines you could possibly want, and then some! Kind helpful and friendly staff, superb central location - price slightly more expensive for a day pass than other gyms but it is worth it for the equipment facilities. Will definitely be back!',
+		rate: 5,
+	},
+	{
+		name: 'Talia al Ghul',
+		avatar: '/static/img/opinions/woman1.jpg',
+		review:
+			'Good staff, great personal trainers! You got all the stuff you need for a perfect workout, good shakes, tasty meals low on calories avaible every day. Just an awesome gym in many different ways! ',
+		rate: 4.5,
+	},
+];
 
 const Opinions = () => {
 	return (
@@ -13,26 +45,9 @@ const Opinions = () => {
 					</div>
 					<hr className='border-orange-400 border-solid border-2 mb-6 lg:w-24' />
 					<div>
-						<div className='bg-zinc-800  p-6  rounded-sm'>
-							<div className='flex flex-row justify-between items-center'>
-								<p className='font-bold text-xl'>John Doe</p>
-								<Image
-									className='rounded-lg w-14 h-12'
-									width={128}
-									height={128}
-									src='/static/img/opinions/man1.jpg'
-									alt='XD'
-								/>
-							</div>
-							<div className='mt-4'>
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Consequuntur iste ipsa blanditiis delectus sit, beatae culpa
-									architecto? Delectus sint dolorem suscipit eos!
-								</p>
-								<span>⭐⭐⭐⭐</span>
-							</div>
-						</div>
+						{reviewsData.map((review) => (
+							<OpinionCard data={review} />
+						))}
 					</div>
 				</div>
 			</div>
