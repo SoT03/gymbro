@@ -1,3 +1,4 @@
+import { useEffect, useState, useCallback, useRef } from 'react';
 import OpinionCard from './OpinionCard';
 
 const reviewsData = [
@@ -32,6 +33,23 @@ const reviewsData = [
 ];
 
 const Opinions = () => {
+	const timerRef = useRef()
+	const [currentReview, setCurrentReview] = useState(0);
+
+	const nextReview = () => {
+		const isLastSlide = currentReview === reviewsData.length - 1;
+		const newIndex = isLastSlide ? 0 : currentReview + 1;
+		setCurrentReview(newIndex);
+	};
+
+	useEffect(() => {
+		timerRef.current = setTimeout(() => {
+			nextReview();
+		}, 5000);
+
+		return () => clearTimeout(timerRef.current);
+	});
+
 	return (
 		<section className='bg-zinc-900 text-white'>
 			<div className='wrapper'>
@@ -43,9 +61,13 @@ const Opinions = () => {
 						<h2 className='text-3xl mb-4 font-bold'>What People Say</h2>
 					</div>
 					<hr className='border-orange-400 border-solid border-2 mb-6 lg:w-24' />
-					<div>
+					<div className='flex overflow-hidden'>
 						{reviewsData.map((review) => (
-							<OpinionCard data={review} key={review.name} />
+							<OpinionCard
+								data={review}
+								key={review.name}
+								currentIndex={currentReview}
+							/>
 						))}
 					</div>
 				</div>

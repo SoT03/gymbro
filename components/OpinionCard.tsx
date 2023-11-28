@@ -13,22 +13,35 @@ type OpinionsProps = {
 		review: string;
 		rate: number;
 	};
+	currentIndex: number;
 };
 
-const OpinionCard = ({ data }: OpinionsProps) => {
+const OpinionCard = ({ data, currentIndex }: OpinionsProps) => {
 	let rating: number = data.rate;
 	let stars: JSX.Element[] = [];
 	let i;
 
 	const getStars = () => {
 		for (i = rating; i >= 1; i--) {
-			stars.push(<IconStarFilled className='text-yellow-400' />);
+			stars.push(
+				<IconStarFilled
+					className='text-yellow-400 w-4 h-4'
+					key={Math.random()}
+				/>
+			);
 		}
 		if (i == 0.5) {
-			stars.push(<IconStarHalfFilled className='text-yellow-400' />);
+			stars.push(
+				<IconStarHalfFilled
+					className='text-yellow-400 w-4 h-4'
+					key={Math.random()}
+				/>
+			);
 		}
 		for (let x = 5 - rating; x >= 1; x--) {
-			stars.push(<IconStar className='text-gray-500' />);
+			stars.push(
+				<IconStar className='text-gray-500 w-4 h-4' key={Math.random()} />
+			);
 		}
 
 		return stars;
@@ -36,10 +49,10 @@ const OpinionCard = ({ data }: OpinionsProps) => {
 
 	getStars();
 
-	console.log(stars);
-
 	return (
-		<div className='bg-zinc-800  p-6  rounded-sm'>
+		<div
+			className='bg-zinc-800  p-6  rounded-sm w-full flex-shrink-0 '
+			style={{ transform: `translate(${-100 * currentIndex}%)` }}>
 			<div className='flex flex-row justify-between items-center'>
 				<p className='font-bold text-xl'>{data.name}</p>
 				<Image
@@ -52,7 +65,7 @@ const OpinionCard = ({ data }: OpinionsProps) => {
 			</div>
 			<div className='mt-4'>
 				<p>{data.review}</p>
-				<span>{stars.map((star) => star)}</span>
+				<span className='flex mt-2'>{stars.map((star) => star)}</span>
 			</div>
 		</div>
 	);
