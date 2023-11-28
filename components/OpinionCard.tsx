@@ -1,4 +1,10 @@
 import Image from 'next/image';
+import {
+	IconStarFilled,
+	IconStarHalfFilled,
+	IconStar,
+} from '@tabler/icons-react';
+import { useEffect } from 'react';
 
 type OpinionsProps = {
 	data: {
@@ -10,6 +16,28 @@ type OpinionsProps = {
 };
 
 const OpinionCard = ({ data }: OpinionsProps) => {
+	let rating: number = data.rate;
+	let stars: JSX.Element[] = [];
+	let i;
+
+	const getStars = () => {
+		for (i = rating; i >= 1; i--) {
+			stars.push(<IconStarFilled className='text-yellow-400' />);
+		}
+		if (i == 0.5) {
+			stars.push(<IconStarHalfFilled className='text-yellow-400' />);
+		}
+		for (let x = 5 - rating; x >= 1; x--) {
+			stars.push(<IconStar className='text-gray-500' />);
+		}
+
+		return stars;
+	};
+
+	getStars();
+
+	console.log(stars);
+
 	return (
 		<div className='bg-zinc-800  p-6  rounded-sm'>
 			<div className='flex flex-row justify-between items-center'>
@@ -24,7 +52,7 @@ const OpinionCard = ({ data }: OpinionsProps) => {
 			</div>
 			<div className='mt-4'>
 				<p>{data.review}</p>
-				<span>⭐⭐⭐⭐</span>
+				<span>{stars.map((star) => star)}</span>
 			</div>
 		</div>
 	);

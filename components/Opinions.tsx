@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import OpinionCard from './OpinionCard';
 
 const reviewsData = [
@@ -14,7 +13,7 @@ const reviewsData = [
 		avatar: '/static/img/opinions/man2.jpg',
 		review:
 			'My partner and I visited the gym after a recommendation from a friend. Great experience, gym has everything you need. It is also very very clean. They offer protein shakes and supplements too which is nice. 350 baht each was reasonable',
-		rate: 4.5,
+		rate: 4,
 	},
 	{
 		name: 'Harvey Dent',
@@ -46,7 +45,7 @@ const Opinions = () => {
 					<hr className='border-orange-400 border-solid border-2 mb-6 lg:w-24' />
 					<div>
 						{reviewsData.map((review) => (
-							<OpinionCard data={review} />
+							<OpinionCard data={review} key={review.name} />
 						))}
 					</div>
 				</div>
