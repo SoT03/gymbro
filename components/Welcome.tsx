@@ -40,7 +40,7 @@ const Welcome = () => {
 							yourself.
 						</p>
 					</div>
-					<div className='lg:w-1/2 mr-6 lg:scale-75'>
+					<div className='lg:w-1/2 md:mr-6 lg:scale-75'>
 						<iframe
 							className='w-full aspect-video
                             '
