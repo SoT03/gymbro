@@ -33,22 +33,30 @@ const reviewsData = [
 ];
 
 const Opinions = () => {
-	const timerRef = useRef()
 	const [currentReview, setCurrentReview] = useState(0);
 
-	const nextReview = () => {
-		const isLastSlide = currentReview === reviewsData.length - 1;
-		const newIndex = isLastSlide ? 0 : currentReview + 1;
-		setCurrentReview(newIndex);
+	const nextReviewHandler = () => {
+		setCurrentReview((prev) => prev + 1);
+		console.log(currentReview);
+	};
+	const prevReviewHandler = () => {
+		setCurrentReview((prev) => prev - 1);
+		console.log(currentReview);
 	};
 
-	useEffect(() => {
-		timerRef.current = setTimeout(() => {
-			nextReview();
-		}, 5000);
+	// const nextReview = () => {
+	// 	const isLastSlide = currentReview === reviewsData.length - 1;
+	// 	const newIndex = isLastSlide ? 0 : currentReview + 1;
+	// 	setCurrentReview(newIndex);
+	// };
 
-		return () => clearTimeout(timerRef.current);
-	});
+	// useEffect(() => {
+	// 	timerRef.current = setTimeout(() => {
+	// 		nextReview();
+	// 	}, 5000);
+
+	// 	return () => clearTimeout(timerRef.current);
+	// });
 
 	return (
 		<section className='bg-zinc-900 text-white'>
@@ -58,10 +66,12 @@ const Opinions = () => {
 						<p className='text-orange-300  uppercase text-xs '>
 							our festimonials
 						</p>
-						<h2 className='text-3xl mb-4 font-bold'>What People Say</h2>
+						<h2 className='text-3xl mb-4 font-bold' onClick={nextReviewHandler}>
+							What People Say
+						</h2>
 					</div>
 					<hr className='border-orange-400 border-solid border-2 mb-6 lg:w-24' />
-					<div className='flex overflow-hidden'>
+					<div className='flex overflow-hidden lg:gap-6 lg:justify-around'>
 						{reviewsData.map((review) => (
 							<OpinionCard
 								data={review}

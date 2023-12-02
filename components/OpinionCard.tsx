@@ -51,7 +51,7 @@ const OpinionCard = ({ data, currentIndex }: OpinionsProps) => {
 
 	return (
 		<div
-			className='bg-zinc-800  p-6  rounded-sm w-full flex-shrink-0 '
+			className='bg-zinc-800  p-6  rounded-sm flex-shrink-0 w-full lg:w-2/5'
 			style={{ transform: `translate(${-100 * currentIndex}%)` }}>
 			<div className='flex flex-row justify-between items-center'>
 				<p className='font-bold text-xl'>{data.name}</p>
