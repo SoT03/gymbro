@@ -1,4 +1,5 @@
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useState } from 'react';
+import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
 import OpinionCard from './OpinionCard';
 
 const reviewsData = [
@@ -44,24 +45,10 @@ const Opinions = () => {
 		console.log(currentReview);
 	};
 
-	// const nextReview = () => {
-	// 	const isLastSlide = currentReview === reviewsData.length - 1;
-	// 	const newIndex = isLastSlide ? 0 : currentReview + 1;
-	// 	setCurrentReview(newIndex);
-	// };
-
-	// useEffect(() => {
-	// 	timerRef.current = setTimeout(() => {
-	// 		nextReview();
-	// 	}, 5000);
-
-	// 	return () => clearTimeout(timerRef.current);
-	// });
-
 	return (
 		<section className='bg-zinc-900 text-white'>
 			<div className='wrapper'>
-				<div className='p-8'>
+				<div className='p-8 relative'>
 					<div className='text-center'>
 						<p className='text-orange-300  uppercase text-xs '>
 							our festimonials
@@ -79,6 +66,14 @@ const Opinions = () => {
 								currentIndex={currentReview}
 							/>
 						))}
+					</div>
+					<div className='absolute flex gap-2 bottom-4 text-white z-10 left-1/2 -translate-x-1/2 md:bottom-8 xl:bottom-1/2 xl:w-full xl:justify-between xl:px-8'>
+						<button>
+							<IconChevronLeft className='h-8 w-8 md:w-12 md:h-12 ' />
+						</button>
+						<button>
+							<IconChevronRight className='h-8 w-8 md:w-12 md:h-12' />
+						</button>
 					</div>
 				</div>
 			</div>
