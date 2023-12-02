@@ -38,11 +38,9 @@ const Opinions = () => {
 
 	const nextReviewHandler = () => {
 		setCurrentReview((prev) => prev + 1);
-		console.log(currentReview);
 	};
 	const prevReviewHandler = () => {
 		setCurrentReview((prev) => prev - 1);
-		console.log(currentReview);
 	};
 
 	return (
@@ -68,11 +66,18 @@ const Opinions = () => {
 						))}
 					</div>
 					<div className='absolute flex gap-2 bottom-4 text-white z-10 left-1/2 -translate-x-1/2 md:bottom-8 xl:bottom-1/2 xl:w-full xl:justify-between xl:px-8'>
-						<button>
-							<IconChevronLeft className='h-8 w-8 md:w-12 md:h-12 ' />
+						<button disabled={currentReview > 0 ? false : true}>
+							<IconChevronLeft
+								className='h-8 w-8 md:w-12 md:h-12'
+								onClick={prevReviewHandler}
+							/>
 						</button>
-						<button>
-							<IconChevronRight className='h-8 w-8 md:w-12 md:h-12' />
+						<button
+							disabled={currentReview < reviewsData.length - 1 ? false : true}>
+							<IconChevronRight
+								className='h-8 w-8 md:w-12 md:h-12'
+								onClick={nextReviewHandler}
+							/>
 						</button>
 					</div>
 				</div>
