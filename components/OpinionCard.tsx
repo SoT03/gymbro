@@ -4,7 +4,6 @@ import {
 	IconStarHalfFilled,
 	IconStar,
 } from '@tabler/icons-react';
-import { useEffect } from 'react';
 
 type OpinionsProps = {
 	data: {
@@ -51,7 +50,7 @@ const OpinionCard = ({ data, currentIndex }: OpinionsProps) => {
 
 	return (
 		<div
-			className='bg-zinc-800  p-6  rounded-sm flex-shrink-0 w-full lg:w-2/5'
+			className='flex-shrink-0  bg-zinc-800  p-6  rounded-sm  w-full   transition-transform duration-300 lg:w-5/12'
 			style={{ transform: `translate(${-100 * currentIndex}%)` }}>
 			<div className='flex flex-row justify-between items-center'>
 				<p className='font-bold text-xl'>{data.name}</p>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
 import OpinionCard from './OpinionCard';
+import { useWindowSize } from '@/hooks/useWindowWidth';
 
 const reviewsData = [
 	{
@@ -34,6 +35,12 @@ const reviewsData = [
 ];
 
 const Opinions = () => {
+	const size = useWindowSize();
+	const isLg =
+		size.width > 1000
+			? { index: -1, lenght: reviewsData.length - 3 }
+			: { index: 0, lenght: reviewsData.length - 1 };
+
 	const [currentReview, setCurrentReview] = useState(0);
 
 	const nextReviewHandler = () => {
@@ -55,8 +62,8 @@ const Opinions = () => {
 							What People Say
 						</h2>
 					</div>
-					<hr className='border-orange-400 border-solid border-2 mb-6 lg:w-24' />
-					<div className='flex overflow-hidden lg:gap-6 lg:justify-around'>
+					<hr className='border-orange-400 border-solid border-2 mb-6 ' />
+					<div className='flex overflow-hidden lg:justify-around lg:gap-6'>
 						{reviewsData.map((review) => (
 							<OpinionCard
 								data={review}
@@ -65,17 +72,20 @@ const Opinions = () => {
 							/>
 						))}
 					</div>
-					<div className='absolute flex gap-2 bottom-4 text-white z-10 left-1/2 -translate-x-1/2 md:bottom-8 xl:bottom-1/2 xl:w-full xl:justify-between xl:px-8'>
-						<button disabled={currentReview > 0 ? false : true}>
+					<div className='absolute flex gap-2 bottom-4 text-white z-10 left-1/2 -translate-x-1/2 md:bottom-4 lg:bottom-1/3 lg:-translate-y-full lg:w-11/12 lg:justify-between'>
+						<button
+							className='bg-slate-200 rounded-full cursor-pointer hover:bg-orange-400 transition-colors duration-300'
+							disabled={currentReview > isLg.index ? false : true}>
 							<IconChevronLeft
-								className='h-8 w-8 md:w-12 md:h-12'
+								className='h-8 w-8 text-black'
 								onClick={prevReviewHandler}
 							/>
 						</button>
 						<button
-							disabled={currentReview < reviewsData.length - 1 ? false : true}>
+							className='bg-slate-200 rounded-full cursor-pointer hover:bg-orange-400 transition-colors duration-300'
+							disabled={currentReview < isLg.lenght ? false : true}>
 							<IconChevronRight
-								className='h-8 w-8 md:w-12 md:h-12'
+								className='h-8 w-8  text-black'
 								onClick={nextReviewHandler}
 							/>
 						</button>
