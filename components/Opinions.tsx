@@ -58,11 +58,11 @@ const Opinions = () => {
 						<p className='text-orange-300  uppercase text-xs '>
 							our festimonials
 						</p>
-						<h2 className='text-3xl mb-4 font-bold' onClick={nextReviewHandler}>
+						<h2 className='text-3xl mb-4 font-bold'>
 							What People Say
 						</h2>
 					</div>
-					<hr className='border-orange-400 border-solid border-2 mb-6 ' />
+					<hr className='border-orange-400 border-solid border-2 mb-6 lg:w-1/12 lg:mx-auto' />
 					<div className='flex overflow-hidden lg:justify-around lg:gap-6'>
 						{reviewsData.map((review) => (
 							<OpinionCard
