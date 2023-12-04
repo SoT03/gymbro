@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Section from './util/Section/Section';
 
 const videos = [
 	'https://www.youtube.com/embed/gey73xiS8F4?si=6r2bzxu0FRjBx3Cz',
