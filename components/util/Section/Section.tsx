@@ -5,12 +5,10 @@ type SectionProps = {
 
 const Section = ({ children, classes }: SectionProps) => {
 	return (
-		<section className={`text-white ${classes?.map((style) => style)}`}>
+		<section className={`text-white py-6 ${classes?.map((style) => style)}`}>
 			<div className='wrapper'>{children}</div>
 		</section>
 	);
 };
 
 export default Section;
-
-
