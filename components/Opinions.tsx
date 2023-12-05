@@ -6,6 +6,8 @@ import Section from './util/Section/Section';
 import SectionHeading from './util/Section/SectionHeading';
 import SectionTitle from './util/Section/SectionTitle';
 import HR from './util/Section/SectionHr';
+import SliderButton from './util/SliderButton';
+import Slider from './util/Slider';
 const reviewsData = [
 	{
 		name: 'John Doe',
@@ -71,22 +73,24 @@ const Opinions = () => {
 					))}
 				</div>
 				<div className='absolute flex gap-2 bottom-4 text-white z-10 left-1/2 -translate-x-1/2 md:bottom-4 lg:bottom-1/3 lg:-translate-y-full lg:w-11/12 lg:justify-between'>
-					<button
-						className='bg-slate-200 rounded-full cursor-pointer hover:bg-orange-400 transition-colors duration-300'
-						disabled={currentReview > isLg.index ? false : true}>
-						<IconChevronLeft
-							className='h-8 w-8 text-black'
-							onClick={prevReviewHandler}
-						/>
-					</button>
-					<button
-						className='bg-slate-200 rounded-full cursor-pointer hover:bg-orange-400 transition-colors duration-300'
-						disabled={currentReview < isLg.lenght ? false : true}>
-						<IconChevronRight
-							className='h-8 w-8  text-black'
-							onClick={nextReviewHandler}
-						/>
-					</button>
+					<SliderButton
+						icon={
+							<IconChevronLeft
+								className='h-8 w-8 text-black'
+								onClick={prevReviewHandler}
+							/>
+						}
+						isDisabled={currentReview > isLg.index ? false : true}
+					/>
+					<SliderButton
+						isDisabled={currentReview < isLg.lenght ? false : true}
+						icon={
+							<IconChevronRight
+								className='h-8 w-8  text-black'
+								onClick={nextReviewHandler}
+							/>
+						}
+					/>
 				</div>
 			</div>
 		</Section>
