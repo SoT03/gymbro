@@ -2,7 +2,10 @@ import { useState } from 'react';
 import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
 import OpinionCard from './OpinionCard';
 import { useWindowSize } from '@/hooks/useWindowWidth';
-
+import Section from './util/Section/Section';
+import SectionHeading from './util/Section/SectionHeading';
+import SectionTitle from './util/Section/SectionTitle';
+import HR from './util/Section/SectionHr';
 const reviewsData = [
 	{
 		name: 'John Doe',
@@ -51,7 +54,49 @@ const Opinions = () => {
 	};
 
 	return (
-		<section className='bg-zinc-900 text-white'>
+		<Section classes={['bg-zinc-900']}>
+			<div className='p-8 relative'>
+				<div className='text-center'>
+					<SectionHeading text='our festimonials' />
+					<SectionTitle title='What People Say' />
+				</div>
+				<HR />
+				<div className='flex overflow-hidden lg:justify-around lg:gap-6'>
+					{reviewsData.map((review) => (
+						<OpinionCard
+							data={review}
+							key={review.name}
+							currentIndex={currentReview}
+						/>
+					))}
+				</div>
+				<div className='absolute flex gap-2 bottom-4 text-white z-10 left-1/2 -translate-x-1/2 md:bottom-4 lg:bottom-1/3 lg:-translate-y-full lg:w-11/12 lg:justify-between'>
+					<button
+						className='bg-slate-200 rounded-full cursor-pointer hover:bg-orange-400 transition-colors duration-300'
+						disabled={currentReview > isLg.index ? false : true}>
+						<IconChevronLeft
+							className='h-8 w-8 text-black'
+							onClick={prevReviewHandler}
+						/>
+					</button>
+					<button
+						className='bg-slate-200 rounded-full cursor-pointer hover:bg-orange-400 transition-colors duration-300'
+						disabled={currentReview < isLg.lenght ? false : true}>
+						<IconChevronRight
+							className='h-8 w-8  text-black'
+							onClick={nextReviewHandler}
+						/>
+					</button>
+				</div>
+			</div>
+		</Section>
+	);
+};
+
+export default Opinions;
+
+{
+	/* <section className='bg-zinc-900 text-white'>
 			<div className='wrapper'>
 				<div className='p-8 relative'>
 					<div className='text-center'>
@@ -92,8 +137,5 @@ const Opinions = () => {
 					</div>
 				</div>
 			</div>
-		</section>
-	);
-};
-
-export default Opinions;
+		</section> */
+}
