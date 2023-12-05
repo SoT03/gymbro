@@ -72,7 +72,7 @@ const Opinions = () => {
 						/>
 					))}
 				</div>
-				<div className='absolute flex gap-2 bottom-4 text-white z-10 left-1/2 -translate-x-1/2 md:bottom-4 lg:bottom-1/3 lg:-translate-y-full lg:w-11/12 lg:justify-between'>
+				<div className='absolute flex gap-2 bottom-4 text-white  left-1/2 -translate-x-1/2 md:bottom-4 lg:bottom-1/3 lg:-translate-y-full lg:w-11/12 lg:justify-between'>
 					<SliderButton
 						icon={
 							<IconChevronLeft

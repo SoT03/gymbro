@@ -1,8 +1,9 @@
 import Header from '@/components/Header';
-import Offer from '@/components/Offer';
+import Offer from '@/components/Pricing';
 import Opinions from '@/components/Opinions';
 import Welcome from '@/components/Welcome';
 import Layout from '@/components/layout/Layout';
+import Pricing from '@/components/Pricing';
 
 const HomePage = () => {
 	return (
@@ -11,7 +12,7 @@ const HomePage = () => {
 			<main>
 				<Welcome />
 				<Opinions />
-				<Offer />
+				<Pricing />
 			</main>
 		</Layout>
 	);
