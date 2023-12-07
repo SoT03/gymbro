@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import OfferCard from './PricingCard';
+import PricingCard from './PricingCard';
 import Section from './util/Section/Section';
 import SectionHeading from './util/Section/SectionHeading';
 import HR from './util/Section/SectionHr';
@@ -8,23 +8,48 @@ import SectionTitle from './util/Section/SectionTitle';
 const memberships = [
 	{
 		title: 'Open Gym',
-		price: { amount: 30, per: 'month' },
+		price: { amount: 50, per: 'month' },
+		options: ['24/7 gym entry', 'Every gym zone avaible', 'Saun avaible'],
+	},
+	{
+		title: 'Veteran Open Gym',
+		price: { amount: 480, per: 'year' },
+		options: [
+			'24/7 gym entry',
+			'Every gym zone avaible',
+			'Only 40$ per month',
+			'Saun avaible',
+			'Own locker',
+			'Member t-shirt',
+		],
+	},
+	{
+		title: 'Fitness Care',
+		price: { amount: 696, per: 'year' },
+		options: [
+			'24/7 gym entry',
+			'Every Zone avaible',
+			'Personal trainer',
+			'Group fitness workout',
+			'Saun avaible',
+			'Own locker',
+		],
 	},
 ];
 
 const Pricing = () => {
 	return (
 		<Section classes={['bg-zinc-800']}>
-			<div className='relative p-6'>
+			<div className='relative py-6 px-8'>
 				<div className='text-center'>
 					<SectionHeading text='Pricing tables' />
 					<SectionTitle title='Gym Membership' />
 				</div>
 				<HR />
-				<div>
-					<OfferCard />
-					<OfferCard />
-					<OfferCard />
+				<div className='flex flex-col justify-center md:flex-row md:flex-wrap'>
+					{memberships.map((membership) => (
+						<PricingCard data={membership} />
+					))}
 				</div>
 				<p className='text-center '>
 					See all of our offer{' '}
