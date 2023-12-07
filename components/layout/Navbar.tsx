@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { useWindowSize } from '@/hooks/useWindowWidth';
 const navLinks: { name: string; link: string }[] = [
 	{ name: 'Home', link: '/' },
+	{ name: 'Pricing', link: '/' },
 	{ name: 'Offer', link: '/' },
 	{ name: 'Schedule', link: '/' },
 	{ name: 'Galerry', link: '/' },
