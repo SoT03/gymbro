@@ -9,14 +9,14 @@ const memberships = [
 	{
 		title: 'Open Gym',
 		price: { amount: 50, per: 'month' },
-		options: ['24/7 gym entry', 'Every gym zone avaible', 'Saun avaible'],
+		options: ['24/7 gym entry', 'Every gym zone available', 'Saun avaible'],
 	},
 	{
 		title: 'Veteran Open Gym',
 		price: { amount: 480, per: 'year' },
 		options: [
 			'24/7 gym entry',
-			'Every gym zone avaible',
+			'Every gym zone available',
 			'Only 40$ per month',
 			'Saun avaible',
 			'Own locker',
@@ -28,7 +28,7 @@ const memberships = [
 		price: { amount: 696, per: 'year' },
 		options: [
 			'24/7 gym entry',
-			'Every Zone avaible',
+			'Every gym zone available',
 			'Personal trainer',
 			'Group fitness workout',
 			'Saun avaible',
