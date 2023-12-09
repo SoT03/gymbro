@@ -17,24 +17,24 @@ const offersList = [
 	},
 	{
 		img: '/static/img/offers/sauna.jpg',
-		title: 'Fitness Zone',
-		desc: 'Air-conditioned fitness room, adapted for classes of various intensity, where all group classes are held under the supervision of a qualified instructor. The spacious hall is equipped with professional equipment such as steppes, fitness barbells, mats, dumbbells, rubber, balls and trampolines. We have created the best conditions for exercise and relaxation.',
+		title: 'Saun',
+		desc: 'Saun is a therapeutic, heated, enclosed, wood-lined room with many different options for benches, seating, design, and size/capacity. The intense heat generated within the sauna encourages detoxifying perspiration, relief from aches and pains, and deep relaxation after your session.',
 	},
 	{
 		img: '/static/img/offers/relax.jpg',
-		title: 'Fitness Zone',
-		desc: 'Air-conditioned fitness room, adapted for classes of various intensity, where all group classes are held under the supervision of a qualified instructor. The spacious hall is equipped with professional equipment such as steppes, fitness barbells, mats, dumbbells, rubber, balls and trampolines. We have created the best conditions for exercise and relaxation.',
+		title: 'Relax Zone',
+		desc: 'A place to relax before and after training is available for all Club members. At the reception of the Club you can also buy pre- and post-workout dietary supplements.',
 	},
 	{
 		img: '/static/img/offers/dietician.jpg',
-		title: 'Fitness Zone',
-		desc: 'Air-conditioned fitness room, adapted for classes of various intensity, where all group classes are held under the supervision of a qualified instructor. The spacious hall is equipped with professional equipment such as steppes, fitness barbells, mats, dumbbells, rubber, balls and trampolines. We have created the best conditions for exercise and relaxation.',
+		title: 'Dietician',
+		desc: 'We offer an individually tailored diet to the needs of the client. In the office we are working on a professional program for laying menus, which includes many recipes, which allows you to lay out a varied and tasty diet. In addition, the program works on the basis of the Food and Nutrition Institute, which confirms the authenticity of the data.',
 	},
 
 	{
 		img: '/static/img/offers/trainer.jpg',
-		title: 'Fitness Zone',
-		desc: 'Air-conditioned fitness room, adapted for classes of various intensity, where all group classes are held under the supervision of a qualified instructor. The spacious hall is equipped with professional equipment such as steppes, fitness barbells, mats, dumbbells, rubber, balls and trampolines. We have created the best conditions for exercise and relaxation.',
+		title: 'Workout Programs',
+		desc: 'Individually tailored training is the key to success. Therefore, all exercises are precisely selected to your needs, taking into account the training goal, level of advancement, predisposition of the musculoskeletal system. We offer: Weight Loose, Body Building and Fitness Classes Programs',
 	},
 ];
 
@@ -49,7 +49,7 @@ const Offers = () => {
 				</div>
 				<div>
 					{offersList.map((offer) => (
-						<Offer data={offer} />
+						<Offer key={offer.title} data={offer} />
 					))}
 				</div>
 			</div>
