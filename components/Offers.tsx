@@ -23,7 +23,7 @@ const offersList = [
 	{
 		img: '/static/img/offers/relax.jpg',
 		title: 'Relax Zone',
-		desc: 'A place to relax before and after training is available for all Club members. At the reception of the Club you can also buy pre- and post-workout dietary supplements.',
+		desc: 'A place to relax before and after training is available for all Club members. At the reception of the Club you can also buy pre- and post-workout dietary supplements. Also you can do a lot of activities as playing billard or bowling.',
 	},
 	{
 		img: '/static/img/offers/dietician.jpg',
