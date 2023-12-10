@@ -3,7 +3,7 @@ import Opinions from '@/components/Opinions';
 import Welcome from '@/components/Welcome';
 import Layout from '@/components/layout/Layout';
 import Pricing from '@/components/Pricing';
-import Offers from '@/components/Offers';
+import BmiSection from '@/components/BmiSection';
 
 const HomePage = () => {
 	return (
@@ -13,7 +13,7 @@ const HomePage = () => {
 				<Welcome />
 				<Opinions />
 				<Pricing />
-				<Offers />
+				<BmiSection />
 			</main>
 		</Layout>
 	);

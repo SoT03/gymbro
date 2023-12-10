@@ -1,8 +1,8 @@
 import Offer from './Offer';
-import Section from './util/Section/Section';
-import SectionHeading from './util/Section/SectionHeading';
-import HR from './util/Section/SectionHr';
-import SectionTitle from './util/Section/SectionTitle';
+import Section from '../util/Section/Section';
+import SectionHeading from '../util/Section/SectionHeading';
+import HR from '../util/Section/SectionHr';
+import SectionTitle from '../util/Section/SectionTitle';
 
 const offersList = [
 	{
