@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import SectionHeading from './util/Section/SectionHeading';
 import SectionTitle from './util/Section/SectionTitle';
+import InputRow from './util/InputRow';
 
 const BmiSection = () => {
 	return (
@@ -9,7 +10,7 @@ const BmiSection = () => {
 				<Image
 					fill
 					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-					src='/static/img/offers/gym.jpg'
+					src='/static/img/bmi/bmiImg.jpg'
 					alt='XD'
 				/>
 			</div>
@@ -20,18 +21,8 @@ const BmiSection = () => {
 					<hr className='border-orange-400 border-solid border-2 mb-6 lg:w-24' />
 				</div>
 				<div>
-					<div>
-						<label htmlFor=''></label>
-						<input type='text' />
-					</div>
-					<div>
-						<label htmlFor=''></label>
-						<input type='text' />
-					</div>
-					<div>
-						<input type='checkbox' name='' id='' />
-						<input type='checkbox' name='' id='' />
-					</div>
+					<InputRow data={{ labelText: 'Your Height', id: 'Height' }} />
+					<InputRow data={{ labelText: 'Your Weight', id: 'Weight' }} />
 					<button>Calculate</button>
 				</div>
 			</div>
