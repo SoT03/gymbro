@@ -23,7 +23,7 @@ const PricingCard = ({ data, index }: CardProps) => {
 				<h3
 					className={` py-1 font-bold md:p-2 ${
 						index === 1
-							? 'bg-gradient-to-r  from-red-500 to-orange-400'
+							? 'bg-gradient-to-r  from-orange-500 to-orange-600'
 							: 'bg-zinc-900'
 					} `}>
 					{data.title}

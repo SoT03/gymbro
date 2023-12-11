@@ -1,4 +1,4 @@
-import Slider from './util/Slider';
+import Slider from './util/Slider/Slider';
 
 const Header = () => {
 	const images = [

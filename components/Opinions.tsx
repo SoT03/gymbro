@@ -6,8 +6,8 @@ import Section from './util/Section/Section';
 import SectionHeading from './util/Section/SectionHeading';
 import SectionTitle from './util/Section/SectionTitle';
 import HR from './util/Section/SectionHr';
-import SliderButton from './util/SliderButton';
-import Slider from './util/Slider';
+import SliderButton from './util/Slider/SliderButton';
+import Slider from './util/Slider/Slider';
 const reviewsData = [
 	{
 		name: 'John Doe',
