@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 type InputRowProps = {
 	type?: string;
 	data: {
@@ -5,15 +7,17 @@ type InputRowProps = {
 		labelText: string;
 		measure?: string;
 	};
+	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const InputRow = ({ type = 'text', data }: InputRowProps) => {
+const InputRow = ({ type = 'text', data, onChange }: InputRowProps) => {
 	return (
 		<div className='relative flex flex-col my-4'>
 			<label htmlFor={data.id} className='font-semibold mb-2'>
 				{data.labelText}
 			</label>
 			<input
+				onChange={onChange}
 				type={type}
 				id={data.id}
 				placeholder={`Enter ${data.labelText}`}
