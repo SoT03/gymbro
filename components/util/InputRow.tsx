@@ -19,7 +19,7 @@ const InputRow = ({ type = 'text', data, onChange }: InputRowProps) => {
 				type={type}
 				id={data.id}
 				placeholder={`Enter ${data.labelText}`}
-				className='px-4 py-2 bg-transparent border border-zinc-400 rounded-sm placeholder:zinc-400'
+				className='px-4 py-2 bg-transparent border border-zinc-400 rounded-sm placeholder:zinc-400 focus:outline-none focus:border-orange-400'
 			/>
 			<span className='absolute right-4 bottom-2.5 text-orange-400 font-semibold uppercase'>
 				{data.measure}
