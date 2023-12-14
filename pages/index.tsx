@@ -4,6 +4,7 @@ import Welcome from '@/components/Welcome';
 import Layout from '@/components/layout/Layout';
 import Pricing from '@/components/Pricing';
 import BmiSection from '@/components/BmiSection';
+import PersonalTrainers from '@/components/PersonalTrainers';
 
 const HomePage = () => {
 	return (
@@ -14,6 +15,7 @@ const HomePage = () => {
 				<Opinions />
 				<Pricing />
 				<BmiSection />
+				<PersonalTrainers />
 			</main>
 		</Layout>
 	);
