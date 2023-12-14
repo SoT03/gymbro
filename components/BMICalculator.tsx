@@ -1,23 +1,26 @@
+import { useState } from 'react';
 import InputRow from './util/InputRow';
 
 const BMICalculator = ({
 	resultHandler,
 }: {
-	resultHandler: (result: string) => void;
+	resultHandler: (result: number) => void;
 }) => {
-	const BMIValues = {
+	const [BMIValues, setBMIValues] = useState({
 		height: 0,
 		weight: 0,
-	};
+	});
 	const heightHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-		BMIValues.height = Number(e.target.value);
+		setBMIValues({ ...BMIValues, height: Number(e.target.value) });
 	};
 	const weightHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-		BMIValues.weight = Number(e.target.value);
+		setBMIValues({ ...BMIValues, weight: Number(e.target.value) });
 	};
 
 	const calcHandler = () => {
-		console.log(BMIValues);
+		const heightDivided = BMIValues.height / 100;
+		let res = BMIValues.weight / Math.pow(heightDivided, 2);
+		resultHandler(res.toFixed(2));
 	};
 	return (
 		<div>
@@ -29,7 +32,7 @@ const BMICalculator = ({
 				onChange={weightHandler}
 				data={{ labelText: 'Your Weight', id: 'Weight', measure: 'kg' }}
 			/>
-			<div className='flex justify-center mt-6'>
+			<div className='flex justify-center mt-6 md:mt-10'>
 				<button className='btn bg-orange-600' onClick={calcHandler}>
 					Calculate
 				</button>
