@@ -2,7 +2,8 @@ type trainerProps = {
 	data: {
 		name: string;
 		desc: string;
-		icon: string;
+		profession: string;
+		options?: string[];
 	};
 };
 
@@ -10,8 +11,9 @@ const TrainerInfo = ({ data }: trainerProps) => {
 	return (
 		<div>
 			<h3>{data.name}</h3>
+			<h4>{data.profession}</h4>
 			<p>{data.desc}</p>
-			<div>{data.icon} Years of Experiance</div>
+			<ul>{data.options && data.options.map((option) => <li>option</li>)}</ul>
 		</div>
 	);
 };
