@@ -5,11 +5,12 @@ type trainerProps = {
 		profession: string;
 		options?: string[];
 	};
+	isActive: boolean;
 };
 
-const TrainerInfo = ({ data }: trainerProps) => {
+const TrainerInfo = ({ data, isActive }: trainerProps) => {
 	return (
-		<div>
+		<div className={isActive ? '' : 'hidden'}>
 			<h3>{data.name}</h3>
 			<h4>{data.profession}</h4>
 			<p>{data.desc}</p>
