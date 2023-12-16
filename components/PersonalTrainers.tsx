@@ -18,7 +18,7 @@ const trainersData = [
 	},
 
 	{
-		name: 'Bryan Danielson',
+		name: 'Daniel Bryan',
 		profession: 'Personal Trainer',
 		desc: 'Personal trainer with an international IFBB license. Passionate about silhouette sports and, above all, extreme bodybuilding. Winner of the title of the international Champion of Poland of rookies of the NPC IFBB PRO LEAGUE federation in the category up to 90 kg and the category OPEN 2020r.Winner of the title of Champion in the Open Cup of Poland Sopot 2019r. in the 90k. category and OPEN category.Medalist of IFBB PZKFiTS 2020 federation debuts in the + 80kg category. ',
 	},
@@ -34,7 +34,6 @@ const trainersData = [
 			' Deep tissue massage (MTG).',
 			'Musculo-fascial release therapy',
 			'Instrument therapy',
-			'Instrument therapy',
 		],
 	},
 ];
@@ -43,16 +42,23 @@ const PersonalTrainers = () => {
 	const [currentTrainer, setCurrentTrainer] = useState(0);
 
 	return (
-		<section className='bg-zinc-900 text-white grid grid-rows-[2fr,3fr] md:grid-rows-none md:grid-cols-2 lg:h-[570px]'>
+		<section className='bg-zinc-900 text-white grid grid-rows-[3fr,2fr] md:grid-rows-none md:grid-cols-2 lg:h-[570px]'>
 			<div className='p-6 md:p-12 lg:py-16 lg:px-32'>
 				<div className='text-center'>
 					<SectionHeading text='our trainers' />
 					<SectionTitle title='Meet Our Proffesionalists' />
 					<hr className='border-orange-400 border-solid border-2 mb-6 lg:w-24' />
 				</div>
-				<menu>
+				<menu className='flex flex-wrap justify-between gap-4'>
 					{trainersData.map((trainer, index) => (
-						<button key={index} onClick={() => setCurrentTrainer(index)}>
+						<button
+							className={`w-[45%] border-2 h-2/4 p-2 ${
+								currentTrainer === index
+									? 'border-orange-400'
+									: 'border-zinc-400'
+							}`}
+							key={index}
+							onClick={() => setCurrentTrainer(index)}>
 							{trainer.name}
 						</button>
 					))}

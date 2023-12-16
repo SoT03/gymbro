@@ -14,7 +14,10 @@ const TrainerInfo = ({ data, isActive }: trainerProps) => {
 			<h3>{data.name}</h3>
 			<h4>{data.profession}</h4>
 			<p>{data.desc}</p>
-			<ul>{data.options && data.options.map((option) => <li>option</li>)}</ul>
+			<ul>
+				{data.options &&
+					data.options.map((option) => <li key={option}>{option}</li>)}
+			</ul>
 		</div>
 	);
 };
