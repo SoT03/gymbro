@@ -8,7 +8,7 @@ const trainersData = [
 	{
 		name: 'John Morrison',
 		profession: 'Personal Trainer',
-		desc: 'Certified Personal Trainer with an international IFBB license, recommended by PZKFITS.Paul is involved in conducting individual training, training and nutrition reigns, as well as preparing athletes to compete in figure competitions.Patience, passion, humility and commitment are his core values as a successful trainer. Knowing that someone achieves their goals with his help gives him great satisfaction. He loves to infect people with positive energy and motivate them to action. As he says , motivation and hard work is a guarantee of success!He has high expectations of his charges, but demands even more from himself. He regularly monitors the progress of his charges, correcting training and dietary mistakes on an ongoing basis.With Paul, you will develop a safe and ambitious plan to achieve your dream goal .... No matter what you want to osiaągnąć, you will achieve it together! With Paul, nothing is impossible!',
+		desc: 'Certified Personal Trainer with an international IFBB license, recommended by PZKFITS.Paul is involved in conducting individual training, training and nutrition reigns, as well as preparing athletes to compete in figure competitions.Patience, passion, humility and commitment are his core values as a successful trainer. Knowing that someone achieves their goals with his help gives him great satisfaction. He loves to infect people with positive energy and motivate them to action. As he says , motivation and hard work is a guarantee of success!He has high expectations of his charges, but demands even more from himself. He regularly monitors the progress of his charges, correcting training and dietary mistakes on an ongoing basis.',
 	},
 
 	{
@@ -42,17 +42,17 @@ const PersonalTrainers = () => {
 	const [currentTrainer, setCurrentTrainer] = useState(0);
 
 	return (
-		<section className='bg-zinc-900 text-white grid grid-rows-[3fr,2fr] md:grid-rows-none md:grid-cols-2 lg:h-[570px]'>
-			<div className='p-6 md:p-12 lg:py-16 lg:px-32'>
+		<section className='bg-zinc-900 text-white grid grid-rows-[3fr,1fr] md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-none '>
+			<div className='p-6 md:p-12 lg:py-20 lg:h-[720px] xl:h-[600px]  xl:px-32'>
 				<div className='text-center'>
 					<SectionHeading text='our trainers' />
 					<SectionTitle title='Meet Our Proffesionalists' />
 					<hr className='border-orange-400 border-solid border-2 mb-6 lg:w-24' />
 				</div>
-				<menu className='flex flex-wrap justify-between gap-4'>
+				<menu className='flex flex-wrap justify-between gap-4 lg:flex-nowrap'>
 					{trainersData.map((trainer, index) => (
 						<button
-							className={`w-[45%] border-2 h-2/4 p-2 ${
+							className={`w-[45%] border-2 h-2/4 p-2 lg:w-[20%] lg:h-auto ${
 								currentTrainer === index
 									? 'border-orange-400'
 									: 'border-zinc-400'
@@ -78,7 +78,7 @@ const PersonalTrainers = () => {
 					style={{ objectFit: 'contain', background: 'black' }}
 					fill
 					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 80vw'
-					src='/static/img/trainers/trainer1.png'
+					src={`/static/img/trainers/trainer${currentTrainer + 1}.png`}
 					alt='XD'
 				/>
 			</div>
