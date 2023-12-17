@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { IconMessage, IconThumbUp } from '@tabler/icons-react';
+import { IconMessage, IconThumbUpFilled } from '@tabler/icons-react';
+import { useState } from 'react';
 
 type NewsCardProps = {
 	data: {
@@ -13,6 +14,19 @@ type NewsCardProps = {
 };
 
 const NewsCard = ({ data, index }: NewsCardProps) => {
+	const [likes, setLikes] = useState(data.likes);
+	const [isLiked, setIsLiked] = useState(false);
+
+	const likeHandler = () => {
+		if (!isLiked) {
+			setIsLiked(!isLiked);
+			setLikes((prev) => prev + 1);
+		} else {
+			setIsLiked(!isLiked);
+			setLikes((prev) => prev - 1);
+		}
+	};
+
 	return (
 		<div
 			className={`bg-zinc-900 relative grid grid-rows-[3fr,5fr]   my-10 rounded-sm shadow-lg shadow-black sm:grid-rows-none sm:grid-cols-[2fr,3fr] md:my-14 ${
@@ -34,8 +48,11 @@ const NewsCard = ({ data, index }: NewsCardProps) => {
 				<span className='text-amber-200 '>Read more...</span>
 				<div className='flex justify-end gap-8 w-full md:absolute md:bottom-4 md:w-3/4 lg:bottom-6 lg:w-10/12'>
 					<span className='flex gap-1 md:gap-2'>
-						<p>{data.likes}</p>
-						<IconThumbUp />
+						<p>{likes}</p>
+						<IconThumbUpFilled
+							className={`cursor-pointer ${isLiked ? 'text-orange-400' : ''}`}
+							onClick={likeHandler}
+						/>
 					</span>
 					<span className='flex gap-1 md:gap-2'>
 						<p>{data.comments}</p>
