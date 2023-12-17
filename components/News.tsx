@@ -1,3 +1,4 @@
+import NewsCard from './NewsCard';
 import Section from './util/Section/Section';
 import SectionHeading from './util/Section/SectionHeading';
 import SectionTitle from './util/Section/SectionTitle';
@@ -9,6 +10,12 @@ const News = () => {
 				<div className='text-center'>
 					<SectionHeading text='Articles' />
 					<SectionTitle title='Our Latest News' />
+				</div>
+
+				<div>
+					<NewsCard />
+					<NewsCard />
+					<NewsCard />
 				</div>
 			</div>
 		</Section>
