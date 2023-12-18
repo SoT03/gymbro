@@ -33,7 +33,9 @@ const NewsCard = ({ data, index }: NewsCardProps) => {
 				index ? 'lg:grid-cols-[2fr,1fr]' : 'lg:grid-cols-[1fr,2fr]'
 			}`}>
 			<div
-				className={`relative bg-slate-100 md:h-72  ${index ? 'order-1' : ''}`}>
+				className={`relative bg-slate-100 md:h-72  ${
+					index ? 'md:order-1' : ''
+				}`}>
 				<Image
 					className=''
 					fill

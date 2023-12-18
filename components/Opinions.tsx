@@ -56,7 +56,7 @@ const Opinions = () => {
 	};
 
 	return (
-		<Section classes={['bg-zinc-900']}>
+		<Section classes={['bg-zinc-900 lg:py-16']}>
 			<div className='p-8 relative'>
 				<div className='text-center'>
 					<SectionHeading text='our festimonials' />

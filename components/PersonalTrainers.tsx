@@ -43,7 +43,7 @@ const PersonalTrainers = () => {
 
 	return (
 		<section className='bg-zinc-900 text-white grid grid-rows-[3fr,1fr] md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-none '>
-			<div className='p-6 md:p-12 lg:py-20 lg:h-[720px] xl:h-[600px]  xl:px-32'>
+			<div className='p-6 md:p-12 lg:py-20 lg:h-[720px] xl:h-[800px]  xl:px-32 2xl:h-[620px]'>
 				<div className='text-center'>
 					<SectionHeading text='our trainers' />
 					<SectionTitle title='Meet Our Proffesionalists' />
