@@ -6,7 +6,7 @@ import Pricing from '@/components/Pricing';
 import BmiSection from '@/components/BmiSection';
 import PersonalTrainers from '@/components/PersonalTrainers';
 import News from '@/components/News';
-import Contact from '@/components/Contact';
+import Hero from '@/components/Hero';
 
 const HomePage = () => {
 	return (
@@ -16,6 +16,7 @@ const HomePage = () => {
 				<Welcome />
 				<Opinions />
 				<Pricing />
+				<Hero />
 				<BmiSection />
 				<PersonalTrainers />
 				<News />
