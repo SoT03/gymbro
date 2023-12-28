@@ -55,9 +55,9 @@ const Slider = ({ imageUrls }: ImageSliderProps) => {
 					<div key={slideIndex}>
 						<IconPointFilled
 							onClick={() => setImgIndex(slideIndex)}
-							className={`h-10 w-10   cursor-pointer  rounded-full  ${
+							className={`h-10 w-10  cursor-pointer  rounded-full   ${
 								slideIndex === imgIndex ? 'text-orange-400' : 'text-white'
-							}`}
+							} hover:scale-110 hover:transition-transform duration-300 hover:shadow-sm hover:shadow-slate-200`}
 						/>
 					</div>
 				))}
