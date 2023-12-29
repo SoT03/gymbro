@@ -6,11 +6,13 @@ import {
 	IconBrandTiktokFilled,
 } from '@tabler/icons-react';
 
+const socialClasses = 'w-6 h-6 m-1';
+
 const socials = [
-	<IconBrandFacebookFilled />,
-	<IconBrandYoutubeFilled />,
-	<IconBrandTwitterFilled />,
-	<IconBrandTiktokFilled />,
+	<IconBrandFacebookFilled className={socialClasses} />,
+	<IconBrandYoutubeFilled className={socialClasses} />,
+	<IconBrandTwitterFilled className={socialClasses} />,
+	<IconBrandTiktokFilled className={socialClasses} />,
 ];
 
 const Footer = () => {
@@ -33,7 +35,7 @@ const Footer = () => {
 						</p>
 					</h2>
 					<p className='font-semibold text-lg'>Social Media</p>
-					<div className='flex mt-2'>
+					<div className='flex mt-2 '>
 						{socials.map((social) => (
 							<div
 								key={Math.random()}
