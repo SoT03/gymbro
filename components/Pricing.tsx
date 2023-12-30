@@ -59,7 +59,7 @@ const Pricing = () => {
 					See all of our prices{' '}
 					<Link
 						className='px-1 relative z-10  text-orange-400 font-bold uppercase before:left-0 before:bottom-0 before:bg-orange-400 transition-colors duration-300 before:w-full before:transition-height before:duration-300 before:h-px  before:absolute before:-z-10  before:content-[""]   hover:text-white hover:before:h-full'
-						href={''}>
+						href='/pricing'>
 						here
 					</Link>
 				</p>

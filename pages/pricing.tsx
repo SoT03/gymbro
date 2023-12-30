@@ -1,5 +1,11 @@
+import Layout from '@/components/layout/Layout';
+
 const PricingPage = () => {
-	return <h1>HIIII</h1>;
+	return (
+		<Layout>
+			<main className='h-screen bg-zinc-800'></main>
+		</Layout>
+	);
 };
 
 export default PricingPage;
