@@ -23,8 +23,8 @@ const infoData = [
 
 const Info = () => {
 	return (
-		<div className='flex flex-col items-center text-center '>
-			<h2 className='text-lg font-semibold '>Quick Info</h2>
+		<div className='flex flex-col items-center text-center'>
+			<h2 className='text-lg font-semibold md:mt-6'>Quick Info</h2>
 			<div className=''>
 				{' '}
 				{infoData.map((info) => (

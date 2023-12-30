@@ -5,8 +5,9 @@ import {
 	IconBrandTwitterFilled,
 	IconBrandTiktokFilled,
 } from '@tabler/icons-react';
+import Link from 'next/link';
 
-const socialClasses = 'w-6 h-6 m-1';
+const socialClasses = 'w-6 h-6  m-1 md:h-4';
 const socials = [
 	<IconBrandFacebookFilled className={socialClasses} />,
 	<IconBrandYoutubeFilled className={socialClasses} />,
@@ -32,11 +33,12 @@ const Socials = () => {
 			<p className='font-semibold text-lg'>Social Media</p>
 			<div className='flex mt-2 '>
 				{socials.map((social) => (
-					<div
+					<Link
+						href='/'
 						key={Math.random()}
-						className='border-zinc-500 border-[1px] mx-1 p-1 rounded-sm'>
+						className='border-zinc-500 border-[1px] mx-2 p-1 rounded-sm cursor-pointer hover:bg-orange-400 duration-300 transition-colors'>
 						{social}
-					</div>
+					</Link>
 				))}
 			</div>
 		</div>
