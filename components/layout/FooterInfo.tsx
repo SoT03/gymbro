@@ -4,19 +4,19 @@ import {
 	IconPhoneFilled,
 } from '@tabler/icons-react';
 
-const iconStyle = 'w-full';
+const iconStyle = 'text-orange-400';
 
 const infoData = [
 	{
-		icon: <IconMapPinFilled />,
+		icon: <IconMapPinFilled className={iconStyle} />,
 		text: 'Nowy Świat 12, 96-300 Żyrardów',
 	},
 	{
-		icon: <IconMailFilled />,
+		icon: <IconMailFilled className={iconStyle} />,
 		text: 'GymBro@gymBro.com',
 	},
 	{
-		icon: <IconPhoneFilled />,
+		icon: <IconPhoneFilled className={iconStyle} />,
 		text: '829 942 022',
 	},
 ];
@@ -28,7 +28,7 @@ const Info = () => {
 			<div className=''>
 				{' '}
 				{infoData.map((info) => (
-					<div className='flex gap-2 my-2'>
+					<div key={info.text} className='flex gap-2 my-2 '>
 						{' '}
 						{info.icon} {info.text}
 					</div>
