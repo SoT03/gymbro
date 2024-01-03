@@ -27,6 +27,27 @@
 		z-index: 10;
 		text-transform: uppercase;
 	}
+
+	.shadow-block--right {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 0;
+		height: 0;
+		border-top: 400px solid transparent;
+
+		border-right: 60px solid rgb(24 24 27);
+	}
+	.shadow-block--left {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 0;
+		height: 0;
+		border-top: 460px solid transparent;
+
+		border-left: 60px solid rgb(39 39 42);
+	}
 }
 
 .wrapper {

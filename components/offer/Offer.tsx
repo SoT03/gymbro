@@ -13,8 +13,13 @@ const Offer = ({ data, index }: OfferProps) => {
 	let check = index % 2;
 	return (
 		<div
-			className={`text-white pb-10  ${check ? 'bg-zinc-800' : 'bg-zinc-900'}`}>
-			<div className='relative bg-slate-100 h-[240px] '>
+			className={`relative text-white pb-10 md:pb-0 md:grid md:grid-cols-2  ${
+				check ? 'bg-zinc-800' : 'bg-zinc-900'
+			}`}>
+			<div
+				className={`relative bg-slate-100 h-[240px] md:h-full ${
+					check ? 'md:order-2' : ''
+				} `}>
 				<Image
 					className=''
 					fill
@@ -22,8 +27,13 @@ const Offer = ({ data, index }: OfferProps) => {
 					src={data.img}
 					alt='XD'
 				/>
+				{check ? (
+					<div className='z-0 shadow-block--left' />
+				) : (
+					<div className=' shadow-block--right' />
+				)}
 			</div>
-			<div className='p-6 md:px-10'>
+			<div className='z-10  p-6 md:px-10'>
 				<h2 className='mb-4 text-xl font-semibold'>{data.title}</h2>
 				<p className='text-left'>{data.desc}</p>
 			</div>
