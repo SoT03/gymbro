@@ -13,7 +13,7 @@ const Offer = ({ data, index }: OfferProps) => {
 	let check = index % 2;
 	return (
 		<div
-			className={`relative text-white pb-10 md:pb-0 md:grid md:grid-cols-2  ${
+			className={`relative text-white pb-10 md:pb-0 md:grid md:grid-cols-2 md:h-[380px]  lg:h-[480px] ${
 				check ? 'bg-zinc-800' : 'bg-zinc-900'
 			}`}>
 			<div
@@ -23,19 +23,21 @@ const Offer = ({ data, index }: OfferProps) => {
 				<Image
 					className=''
 					fill
-					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 100vw'
 					src={data.img}
 					alt='XD'
 				/>
 				{check ? (
-					<div className='z-0 shadow-block--left' />
+					<div className='z-0 shadow-block--left lg:border-l-[120px]' />
 				) : (
-					<div className=' shadow-block--right' />
+					<div className=' shadow-block--right lg:border-r-[120px]' />
 				)}
 			</div>
-			<div className='z-10  p-6 md:px-10'>
-				<h2 className='mb-4 text-xl font-semibold'>{data.title}</h2>
-				<p className='text-left'>{data.desc}</p>
+			<div className='z-10  p-6 md:p-10 lg:p-20'>
+				<h2 className='mb-4 text-xl font-semibold lg:text-2xl lg:mb-10'>
+					{data.title}
+				</h2>
+				<p className='text-left xl:text-xl'>{data.desc}</p>
 			</div>
 		</div>
 	);
