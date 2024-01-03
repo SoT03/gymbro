@@ -3,14 +3,13 @@ import Link from 'next/link';
 
 import { IconMenu2, IconX } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
-import { useWindowSize } from '@/hooks/useWindowWidth';
 const navLinks: { name: string; link: string }[] = [
 	{ name: 'Home', link: '/' },
-	{ name: 'Pricing', link: '/pricing' },
-	{ name: 'Offer', link: '/' },
-	{ name: 'Schedule', link: '/' },
-	{ name: 'Galerry', link: '/' },
-	{ name: 'News', link: '/' },
+	{ name: 'Pricing', link: '/#pricing' },
+	{ name: 'Offer', link: '/offer' },
+	{ name: 'Schedule', link: '/schedule' },
+	{ name: 'Galerry', link: '/gallery' },
+	{ name: 'News', link: '/#news' },
 ];
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);

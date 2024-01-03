@@ -3,11 +3,13 @@ type SectionProps = {
 	classes?: string[];
 	style?: {};
 	shadow?: boolean;
+	id?: string;
 };
 
-const Section = ({ children, classes, style, shadow }: SectionProps) => {
+const Section = ({ children, classes, style, shadow, id }: SectionProps) => {
 	return (
 		<section
+			id={id}
 			className={`text-white py-6 ${classes?.map((style) => style)}`}
 			style={style}>
 			<div className='wrapper'>{children}</div>

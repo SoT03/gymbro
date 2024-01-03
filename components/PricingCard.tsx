@@ -1,5 +1,5 @@
 type CardProps = {
-	index: number;
+	index?: number;
 	data: {
 		title: string;
 		price: {

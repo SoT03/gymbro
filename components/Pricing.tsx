@@ -39,7 +39,7 @@ const memberships = [
 
 const Pricing = () => {
 	return (
-		<Section classes={['bg-zinc-800']}>
+		<Section id='pricing' classes={['bg-zinc-800']}>
 			<div className='relative py-6 px-8'>
 				<div className='text-center'>
 					<SectionHeading text='Pricing tables' />

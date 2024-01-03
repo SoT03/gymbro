@@ -30,7 +30,7 @@ const newsData = [
 
 const News = () => {
 	return (
-		<Section classes={['bg-zinc-800']}>
+		<Section id='news' classes={['bg-zinc-800']}>
 			<div className='relative py-6 px-8'>
 				<div className='text-center'>
 					<SectionHeading text='Articles' />
