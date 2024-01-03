@@ -10,7 +10,7 @@ import Hero from '@/components/Hero';
 
 const HomePage = () => {
 	return (
-		<Layout>
+		<>
 			<Header />
 			<main>
 				<Welcome />
@@ -21,7 +21,7 @@ const HomePage = () => {
 				<PersonalTrainers />
 				<News />
 			</main>
-		</Layout>
+		</>
 	);
 };
 

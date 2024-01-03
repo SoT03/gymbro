@@ -62,20 +62,18 @@ const bodyBuildingArray = [
 
 const PricingPage = () => {
 	return (
-		<Layout>
-			<main className=' bg-zinc-800 py-12 '>
-				<PricingSection title='GYM AREAS'>
-					{gymAreasArray.map((item, index) => (
-						<PricingCard data={item} index={index} key={index} />
-					))}
-				</PricingSection>
-				<PricingSection title='Work with Proffesionalist'>
-					{bodyBuildingArray.map((item, index) => (
-						<PricingCard data={item} index={index} key={index} />
-					))}
-				</PricingSection>
-			</main>
-		</Layout>
+		<main className=' bg-zinc-800 py-12 '>
+			<PricingSection title='GYM AREAS'>
+				{gymAreasArray.map((item, index) => (
+					<PricingCard data={item} index={index} key={index} />
+				))}
+			</PricingSection>
+			<PricingSection title='Work with Proffesionalist'>
+				{bodyBuildingArray.map((item, index) => (
+					<PricingCard data={item} index={index} key={index} />
+				))}
+			</PricingSection>
+		</main>
 	);
 };
 
