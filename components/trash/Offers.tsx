@@ -1,4 +1,4 @@
-import Offer from './Offer';
+import Offer from '../offer/Offer';
 import Section from '../util/Section/Section';
 import SectionHeading from '../util/Section/SectionHeading';
 import HR from '../util/Section/SectionHr';
@@ -48,9 +48,10 @@ const Offers = () => {
 					<HR />
 				</div>
 				<div>
-					{offersList.map((offer) => (
-						<Offer key={offer.title} data={offer} />
-					))}
+					{offersList.map((offer, index) => {
+						console.log(index);
+						return <Offer key={offer.title} data={offer} index={index} />;
+					})}
 				</div>
 			</div>
 		</Section>

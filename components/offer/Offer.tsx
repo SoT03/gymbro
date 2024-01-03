@@ -6,12 +6,15 @@ type OfferProps = {
 		title: string;
 		desc: string;
 	};
+	index: number;
 };
 
-const Offer = ({ data }: OfferProps) => {
+const Offer = ({ data, index }: OfferProps) => {
+	let check = index % 2;
 	return (
-		<div className='bg-zinc-800 relative grid grid-rows-[3fr,5fr]   my-10 rounded-sm shadow-lg shadow-black sm:grid-rows-none sm:grid-cols-[2fr,3fr] lg:grid-cols-[1fr,2fr] md:my-14'>
-			<div className='relative bg-slate-100 md:h-72 '>
+		<div
+			className={`text-white pb-10  ${check ? 'bg-zinc-800' : 'bg-zinc-900'}`}>
+			<div className='relative bg-slate-100 h-[240px] '>
 				<Image
 					className=''
 					fill
