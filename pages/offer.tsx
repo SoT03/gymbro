@@ -59,7 +59,7 @@ const OfferPage = () => {
 						<h3 className='text-amber-500 text-center mb-6 text-4xl'>
 							Join Us !
 						</h3>
-						<p>
+						<p className='text-center md:py-2 md:px-16 lg:max-w-5xl lg:m-auto'>
 							Our gym have a lot to offer and will comfort everybody needs. We
 							invest 80% of our income into the gym into this gym. All this
 							beacause this gym is our hobby we love it with all of our heart.
