@@ -1,45 +1,9 @@
+import ScheduleRow from '@/components/schedule/scheduleRow';
+
 const scheduleData = [
 	{
-		name: 'BJJ',
-		day: 'Mon',
-		time: '17',
-		duration: '2',
-	},
-	{
-		name: 'Fitness',
-		day: 'Mon',
-		time: '19',
-		duration: '1',
-	},
-	{
-		name: 'Boks for kids',
-		day: 'Tue',
-		time: '18',
-		duration: '1',
-	},
-	{
-		name: 'PhysioMobility',
-		day: 'Wen',
-		time: '18',
-		duration: '2',
-	},
-	{
-		name: 'BJJ',
-		day: 'Wen',
-		time: '19',
-		duration: '2',
-	},
-	{
-		name: 'Fitness',
-		day: 'Thu',
-		time: '17',
-		duration: '1',
-	},
-	{
-		name: 'Boks for kids',
-		day: 'Fri',
-		time: '18',
-		duration: '1',
+		time: 17,
+		events: [{ day: 'Mon',name:'BJJ', duration: 2, trainer: 'John Morrison' }],
 	},
 ];
 
@@ -53,6 +17,7 @@ const SchedulePage = () => {
 					<table>
 						<thead>
 							<tr>
+								<th></th>
 								<th>Monday</th>
 								<th>Tuesday</th>
 								<th>Wednesday</th>
@@ -62,7 +27,7 @@ const SchedulePage = () => {
 							</tr>
 						</thead>
 						<tbody>
-							
+							<ScheduleRow data={scheduleData[0]} />
 						</tbody>
 					</table>
 				</div>
