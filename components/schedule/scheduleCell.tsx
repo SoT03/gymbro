@@ -1,6 +1,6 @@
 type cellData = {
 	time: number;
-	data: { day: string; name: string; duration: number; trainer: string };
+	data: { day: string; name?: string; duration?: number; trainer?: string };
 };
 
 const ScheduleCell = ({ data, time }: cellData) => {
@@ -8,27 +8,32 @@ const ScheduleCell = ({ data, time }: cellData) => {
 
 	switch (data.name) {
 		case 'BJJ':
-			color = 'bg-emerald-400';
+			color = 'emerald-400';
 			break;
 		case 'Fitness':
-			color = 'bg-fuchsia-500';
+			color = 'fuchsia-500';
 			break;
 		case 'PchysioMobility':
-			color = 'bg-rose-600';
+			color = 'rose-600';
 			break;
 		case 'Perfect ABS':
-			color = 'bg-sky-500';
+			color = 'sky-500';
 			break;
 	}
 
+	const height = 'h-[' + 100 * data.duration! + 'px]';
+
 	return (
-		<td rowSpan={data.duration} className={`${color} `}>
+		<td rowSpan={data.duration} className={`border-2 border-amber-400 `}>
 			{data.name && (
-				<div>
+				<div
+					className={`px-2 py-4 mx-4 my-4 ${height} ${
+						'bg-' + color
+					} border-4 rounded-md  ${'border-' + color}   bg-opacity-60 `}>
 					<h3>{data.name}</h3>
 					<p>{data.trainer}</p>
 					<p>
-						{time}:00 - {time + data.duration}:00
+						{time}:00 - {time + data.duration!}:00
 					</p>
 				</div>
 			)}
