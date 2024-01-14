@@ -26,10 +26,7 @@ const ScheduleCell = ({ data, time }: cellData) => {
 	return (
 		<td rowSpan={data.duration} className={`border-2 border-amber-400 `}>
 			{data.name && (
-				<div
-					className={`px-2 py-4 mx-4 my-4 ${height} ${
-						'bg-' + color
-					} border-4 rounded-md  ${'border-' + color}   bg-opacity-60 `}>
+				<div className={`p-2 m-2 bg-red-400 w-32 lg:w-auto`}>
 					<h3>{data.name}</h3>
 					<p>{data.trainer}</p>
 					<p>
@@ -40,5 +37,9 @@ const ScheduleCell = ({ data, time }: cellData) => {
 		</td>
 	);
 };
+
+// px-2 py-4 mx-4 my-4 ${height} ${
+// 	'bg-' + color
+// } border-4 rounded-md  ${'border-' + color}   bg-opacity-60
 
 export default ScheduleCell;

@@ -48,25 +48,27 @@ const scheduleData = [
 	},
 ];
 
+const cellStyle = 'lg:w-[13.5%]';
+
 const SchedulePage = () => {
 	return (
-		<main className='h-screen  bg-zinc-800 text-white '>
-			<div className='wrapper flex items-center justify-center flex-col h-screen'>
+		<main className='h-screen  bg-zinc-800 text-white overflow-scroll'>
+			<div className='wrapper h-full lg:flex lg:flex-col lg:items-center lg:justify-center '>
 				<h1 className='uppercase font-bold mb-20'>group sessions Schedule</h1>
 
 				<table className='w-full'>
 					<thead>
 						<tr>
-							<th className='w-[6%]'></th>
-							<th className='w-[13.5%]'>Monday</th>
-							<th className='w-[13.5%]'>Tuesday</th>
-							<th className='w-[13.5%]'>Wednesday</th>
-							<th className='w-[13.5%]'>Thursday</th>
-							<th className='w-[13.5%]'>Friday</th>
-							<th className='w-[13.5%]'>Saturday</th>
+							<th className='lg:w-[6%]'></th>
+							<th className={cellStyle}>Monday</th>
+							<th className={cellStyle}>Tuesday</th>
+							<th className={cellStyle}>Wednesday</th>
+							<th className={cellStyle}>Thursday</th>
+							<th className={cellStyle}>Friday</th>
+							<th className={cellStyle}>Saturday</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody className=''>
 						{scheduleData.map((time) => (
 							<ScheduleRow data={time} key={time.time} />
 						))}
