@@ -15,7 +15,7 @@ type timeProps = {
 const ScheduleRow = ({ data }: timeProps) => {
 	return (
 		<tr className=''>
-			<td>{data.time.toString()}:00</td>
+			<td className='px-4'>{data.time.toString()}:00</td>
 			{data.events.map((event) => (
 				<ScheduleCell time={data.time} data={event} key={event.day} />
 			))}

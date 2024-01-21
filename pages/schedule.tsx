@@ -48,17 +48,19 @@ const scheduleData = [
 	},
 ];
 
-const cellStyle = 'lg:w-[13.5%]';
+const cellStyle = 'p-2 lg:w-[13.5%]';
 
 const SchedulePage = () => {
 	return (
 		<main className='h-screen  bg-zinc-800 text-white overflow-scroll'>
 			<div className='wrapper h-full lg:flex lg:flex-col lg:items-center lg:justify-center '>
-				<h1 className='uppercase font-bold mb-20'>group sessions Schedule</h1>
+				<h1 className='uppercase text-xl font-bold mt-28 mb-14 text-center lg:text-3xl'>
+					group sessions Schedule
+				</h1>
 
-				<table className='w-full'>
-					<thead>
-						<tr>
+				<table className='w-full mb-12 md:mb-0'>
+					<thead className=''>
+						<tr className=''>
 							<th className='lg:w-[6%]'></th>
 							<th className={cellStyle}>Monday</th>
 							<th className={cellStyle}>Tuesday</th>

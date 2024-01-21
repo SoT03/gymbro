@@ -8,25 +8,26 @@ const ScheduleCell = ({ data, time }: cellData) => {
 
 	switch (data.name) {
 		case 'BJJ':
-			color = 'emerald-400';
+			color = 'bg-emerald-400 border-emerald-400';
 			break;
 		case 'Fitness':
-			color = 'fuchsia-500';
+			color = 'bg-fuchsia-500 border-fuchsia-500';
 			break;
 		case 'PchysioMobility':
-			color = 'rose-600';
+			color = 'bg-rose-600 border-rose-600';
 			break;
 		case 'Perfect ABS':
-			color = 'sky-500';
+			color = 'bg-sky-500 border-sky-500';
 			break;
 	}
 
-	const height = 'h-[' + 100 * data.duration! + 'px]';
+	const height = 'h-[' + 120 * data.duration! + 'px]';
 
 	return (
-		<td rowSpan={data.duration} className={`border-2 border-amber-400 `}>
+		<td rowSpan={data.duration} className={`border-2  border-amber-400 `}>
 			{data.name && (
-				<div className={`p-2 m-2 bg-red-400 w-32 lg:w-auto`}>
+				<div
+					className={`p-2 m-4 w-32 flex flex-col justify-center gap-2 bg-opacity-50 lg:w-auto ${color} ${height} border-2`}>
 					<h3>{data.name}</h3>
 					<p>{data.trainer}</p>
 					<p>
