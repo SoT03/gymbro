@@ -66,3 +66,19 @@
 html {
 	scroll-behavior: smooth;
 }
+
+.show-animation {
+	animation: appear 0.5s forwards;
+}
+
+@keyframes appear {
+	from {
+		transform: translateY(2rem);
+		opacity: 0;
+	}
+
+	to {
+		opacity: 100;
+		transform: translateY(0);
+	}
+}

@@ -34,7 +34,7 @@ const GalleryPage = () => {
 			</div>
 			{activeImg != -1 && (
 				<div
-					className='fixed top-0 w-full h-screen bg-black bg-opacity-60 flex items-center justify-center z-50'
+					className='fixed top-0 w-full h-screen bg-black bg-opacity-60 flex items-center justify-center z-50 show-animation'
 					onClick={() => setActiveImg(-1)}>
 					<Image
 						src={`/static/img/gallery/${activeImg}.jpg`}
