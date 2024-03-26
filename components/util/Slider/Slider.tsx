@@ -16,7 +16,7 @@ export type ImageSliderProps = {
 };
 
 const Slider = ({ imageUrls }: ImageSliderProps) => {
-	const timerRef = useRef();
+	const timerRef = useRef<NodeJS.Timeout>();
 	const [imgIndex, setImgIndex] = useState(0);
 
 	// const prevSlide = () => {
@@ -32,12 +32,15 @@ const Slider = ({ imageUrls }: ImageSliderProps) => {
 	};
 
 	useEffect(() => {
+		if (timerRef.current) {
+			clearTimeout(timerRef.current);
+		}
 		timerRef.current = setTimeout(() => {
 			nextSlide();
-		}, 5000);
+		}, 6000);
 
 		return () => clearTimeout(timerRef.current);
-	});
+	}, [nextSlide]);
 
 	return (
 		<div className=' relative h-full z-0 overflow-hidden'>
