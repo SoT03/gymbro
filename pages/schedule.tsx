@@ -52,7 +52,7 @@ const cellStyle = 'p-2 lg:w-[13.5%]';
 
 const SchedulePage = () => {
 	return (
-		<main className='h-screen  bg-zinc-800 text-white overflow-scroll'>
+		<main className='h-screen  bg-zinc-800 text-white overflow-scroll xl:overflow-hidden'>
 			<div className='wrapper h-full lg:flex lg:flex-col lg:items-center lg:justify-center '>
 				<h1 className='uppercase text-xl font-bold mt-28 mb-14 text-center lg:text-3xl'>
 					group sessions Schedule

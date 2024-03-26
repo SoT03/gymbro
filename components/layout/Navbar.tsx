@@ -55,8 +55,8 @@ const Navbar = () => {
 				</div>
 
 				<ul
-					className={`absolute bg-gray-800 w-full left-0 -top-full text-center py-2    transition-all duration-500   ${
-						isOpen ? 'opacity-1  top-12' : 'opacity-0'
+					className={`absolute bg-gray-800 w-full left-0 -top-96 text-center py-2    transition-all duration-500   ${
+						isOpen ? 'opacity-100   top-10' : 'opacity-0'
 					} md:flex md:items-center  md:w-auto md:opacity-100  md:static md:bg-transparent`}>
 					{navLinks.map((link) => (
 						<li key={link.name}>
