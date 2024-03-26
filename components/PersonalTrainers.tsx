@@ -79,7 +79,7 @@ const PersonalTrainers = () => {
 					fill
 					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 80vw'
 					src={`/static/img/trainers/trainer${currentTrainer + 1}.png`}
-					alt='XD'
+					alt='Trainer Image'
 				/>
 			</div>
 		</section>

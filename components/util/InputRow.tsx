@@ -3,7 +3,7 @@ type InputRowProps = {
 	data: {
 		id: string;
 		labelText: string;
-		measure?: string;
+		measure?: string | number;
 	};
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
