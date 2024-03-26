@@ -4,7 +4,7 @@ import InputRow from './util/InputRow';
 const BMICalculator = ({
 	resultHandler,
 }: {
-	resultHandler: (result: number | string) => void;
+	resultHandler: (result: number) => void;
 }) => {
 	const [BMIValues, setBMIValues] = useState({
 		height: 0,
@@ -20,7 +20,7 @@ const BMICalculator = ({
 	const calcHandler = () => {
 		const heightDivided = BMIValues.height / 100;
 		let res: number = BMIValues.weight / Math.pow(heightDivided, 2);
-		resultHandler(res.toFixed(2));
+		resultHandler(parseFloat(res.toFixed(2)));
 	};
 	return (
 		<div>

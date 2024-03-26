@@ -12,7 +12,7 @@ const BmiSection = () => {
 		color: 'text-green-400',
 	};
 
-	const resultHandler = (result: number) => {
+	const resultHandler = (result: number ) => {
 		setResult(result);
 	};
 	if (result <= 18.5) {
