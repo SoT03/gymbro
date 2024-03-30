@@ -51,6 +51,8 @@ const Welcome = () => {
 						<div className='flex justify-around lg:gap-2 lg:mt-2'>
 							{thumbnails.map((photo, index) => (
 								<img
+									fetchPriority='low'
+									loading='lazy'
 									src={photo}
 									alt='some alt'
 									key={photo}
