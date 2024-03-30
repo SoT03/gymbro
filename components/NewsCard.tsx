@@ -9,6 +9,7 @@ type NewsCardProps = {
 		likes: number;
 		comments: number;
 		img: string;
+		alt: string;
 	};
 	index: boolean;
 };
@@ -41,7 +42,7 @@ const NewsCard = ({ data, index }: NewsCardProps) => {
 					fill
 					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 					src={data.img}
-					alt='XD'
+					alt={data.alt}
 				/>
 			</div>
 			<div className='p-6 md:px-10 relative'>

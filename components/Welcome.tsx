@@ -55,7 +55,7 @@ const Welcome = () => {
 									fetchPriority='low'
 									loading='lazy'
 									src={photo}
-									alt='some alt'
+									alt={`video number ${index + 1}`}
 									key={photo}
 									className={`w-1/3 border-4 cursor-pointer hover:scale-110 transition-transform duration-300  ${
 										index === currentVideo ? 'border-orange-400' : ''

@@ -34,6 +34,7 @@ const Socials = () => {
 			<div className='flex mt-2 '>
 				{socials.map((social) => (
 					<Link
+						aria-label='Social media link'
 						href='/'
 						key={Math.random()}
 						className='border-zinc-500 border-[1px] mx-2 p-1 rounded-sm cursor-pointer hover:bg-orange-400 duration-300 transition-colors'>

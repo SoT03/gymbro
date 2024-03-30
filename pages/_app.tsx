@@ -7,6 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<Layout>
 			<Head>
+				<meta httpEquiv='content-language' content='pl' />
 				<title>GymBro</title>
 				<link rel='canonical' href='https://gymbro-silk.vercel.app/' />
 				<meta property='og:title' content='GymBro' />

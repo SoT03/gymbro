@@ -11,6 +11,7 @@ const newsData = [
 		likes: 123,
 		comments: 36,
 		img: '/static/img/news/date.jpg',
+		alt: 'Couple hugging',
 	},
 	{
 		title: 'How to eat properly',
@@ -18,6 +19,7 @@ const newsData = [
 		likes: 69,
 		comments: 3,
 		img: '/static/img/news/diet.jpg',
+		alt: 'Healthy food',
 	},
 	{
 		title: 'Best suplements',
@@ -25,6 +27,7 @@ const newsData = [
 		likes: 222,
 		comments: 67,
 		img: '/static/img/news/suplements.jpg',
+		alt: 'Tabs',
 	},
 ];
 
