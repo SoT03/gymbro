@@ -43,6 +43,7 @@ const Welcome = () => {
 					</div>
 					<div className='lg:w-1/2  lg:scale-75'>
 						<iframe
+							loading='lazy'
 							className='w-full aspect-video 
                             '
 							src={videos[currentVideo]}

@@ -75,6 +75,8 @@ const PersonalTrainers = () => {
 			</div>
 			<div className='bg-red-400 relative '>
 				<Image
+					fetchPriority='low'
+					loading='lazy'
 					style={{ objectFit: 'contain', background: 'black' }}
 					fill
 					sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 80vw'
