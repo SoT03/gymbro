@@ -59,7 +59,7 @@ const Navbar = () => {
 						isOpen ? 'opacity-100   top-10' : 'opacity-0'
 					} md:flex md:items-center  md:w-auto md:opacity-100  md:static md:bg-transparent`}>
 					{navLinks.map((link) => (
-						<li key={link.name}>
+						<li key={link.name} onClick={navMenuHandler}>
 							<Link
 								href={link.link}
 								className='block py-2 my-2 cursor-pointer md:mx-4 z-100 hover:text-orange-400 transition-colors duration-300'>
