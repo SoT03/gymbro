@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import loaderImg from '../public/static/img/gallery/loader.jpg';
 
 const altData = [
 	'treadmills photo',
@@ -24,8 +23,10 @@ const GalleryPage = () => {
 				{altData.map((alt, index) => (
 					<div
 						key={index}
-						className='shadow-sm bg-center bg-cover  shadow-amber-300 md:w-3/4 lg:max-w-[360px] lg:max-h-[200px] '
-						style={{ backgroundImage: `url(${loaderImg.src})` }}>
+						className='shadow-sm bg-center bg-cover  shadow-amber-300 md:w-3/4 lg:max-w-[360px] lg:max-h-[240px] '
+						style={{
+							backgroundImage: `url(/static/img/gallery/loader${index}.jpg)`,
+						}}>
 						<Image
 							loading='lazy'
 							onLoad={(e) => e.currentTarget.classList.remove('opacity-0')}
@@ -45,6 +46,8 @@ const GalleryPage = () => {
 					onClick={() => setActiveImg(-1)}>
 					<Image
 						src={`/static/img/gallery/${activeImg}.jpg`}
+						className='opacity-0'
+						onLoad={(e) => e.currentTarget.classList.remove('opacity-0')}
 						height={1275}
 						width={850}
 						alt={altData[activeImg]}
