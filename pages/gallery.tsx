@@ -46,7 +46,7 @@ const GalleryPage = () => {
 					onClick={() => setActiveImg(-1)}>
 					<Image
 						src={`/static/img/gallery/${activeImg}.jpg`}
-						className='opacity-0'
+						className='opacity-0 transition-opacity duration-200'
 						onLoad={(e) => e.currentTarget.classList.remove('opacity-0')}
 						height={1275}
 						width={850}
