@@ -1,7 +1,7 @@
 # CryptoCalc
-GymBro is a simple gym website project
+GymBro is a simple front-end website project designed for a gym. The website provides essential features to help gym-goers stay informed and engaged.
 
-![Alt text](Screenshot_18.png)
+![Alt text](Screenshot_19.png)
 
 ### Installation
 
